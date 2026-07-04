@@ -2,13 +2,26 @@
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: "Vazirmatn", sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-500: oklch(63.7% 0.237 25.331);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --font-weight-medium: 900;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-weight-regular: 400;
+    --text-regular-14: 14px;
+    --text-medium-16: 16px;
+    --text-semibold-20: 20px;
+    --text-display-48: 48px;
+    --color-primary: #cccccc;
+    --color-primary-hover: #075cd9;
+    --color-on-background: #191c1e;
+    --color-success: #90f677;
+    --color-error: #e63946;
   }
 }
 @layer base {
@@ -160,7 +173,23 @@
   }
 }
 @layer utilities {
-  .text-red-500 {
-    color: var(--color-red-500);
+  .font-sans {
+    font-family: var(--font-sans);
   }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-primary-hover {
+    color: var(--color-primary-hover);
+  }
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../assets/fonts/Vazirmatn-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
 }
