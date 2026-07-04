@@ -1,5 +1,85 @@
 @import "tailwindcss";
 
+@layer base {
+  :root {
+    /* Primary */
+    --color-primary: #007bff;
+    --color-primary-hover: #075cd9;
+    --color-on-primary: #ffffff;
+
+    /* Background & Surface */
+    --color-background: #ffffff;
+    --color-on-background: #191c1e;
+    --color-surface: #ffffff;
+    --color-surface-primary: #ffffff;
+
+    /* Text */
+    --color-text-primary: #242424;
+    --color-text-secondary: #7d7d7f;
+
+    /* Priority */
+    --color-high: #ff5f37;
+    --color-medium: #ffaf37;
+    --color-low: #11a483;
+
+    /* Status */
+    --color-success: #11a483;
+    --color-error: #ff5f37;
+    --color-warning: #ffaf37;
+
+    /* Neutral */
+    --color-neutral-1: #ffffff;
+    --color-neutral-2: #fefefe;
+    --color-neutral-3: #f5f6f8;
+    --color-neutral-4: #e1e0e5;
+    --color-neutral-5: #c8c7cb;
+    --color-neutral-6: #afaeb2;
+    --color-neutral-7: #7d7d7f;
+    --color-neutral-8: #646466;
+    --color-neutral-9: #323233;
+    --color-neutral-10: #000000;
+  }
+
+  .dark {
+    /* Primary */
+    --color-primary: #3a86f8;
+    --color-primary-hover: #6ba4fa;
+    --color-on-primary: #ffffff;
+
+    /* Background & Surface */
+    --color-background: #040810;
+    --color-on-background: #e6e9ef;
+    --color-surface: #e6e9ef;
+    --color-surface-primary: #060c18;
+
+    /* Text */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #7d7d7f;
+
+    /* Priority */
+    --color-high: #ff5f37;
+    --color-medium: #ffaf37;
+    --color-low: #11a483;
+
+    /* Status */
+    --color-success: #11a483;
+    --color-error: #ff5f37;
+    --color-warning: #ffaf37;
+
+    /* Neutral */
+    --color-neutral-1: #000000;
+    --color-neutral-2: #323233;
+    --color-neutral-3: #646466;
+    --color-neutral-4: #7d7d7f;
+    --color-neutral-5: #afaeb2;
+    --color-neutral-6: #c8c7cb;
+    --color-neutral-7: #e1e0e5;
+    --color-neutral-8: #f5f6f8;
+    --color-neutral-9: #fefefe;
+    --color-neutral-10: #ffffff;
+  }
+}
+
 @theme {
   --font-sans: "Vazirmatn", sans-serif;
 
@@ -68,45 +148,6 @@
   --text-display-32: 32px;
   --text-display-28: 28px;
   --text-display-24: 24px;
-
-  --color-primary: #cccccc;
-  --color-primary-hover: #075cd9;
-  --color-on-primary: #ffffff;
-  --color-background: #ffffff;
-  --color-on-background: #191c1e;
-  --color-surface: #ffffff;
-
-  --color-neutral-light-1: #ffffff;
-  --color-neutral-light-2: #fefefe;
-  --color-neutral-light-3: #f5f6f8;
-  --color-neutral-light-4: #e1e0e5;
-  --color-neutral-light-5: #c8c7cb;
-  --color-neutral-light-6: #afaeb2;
-  --color-neutral-light-7: #7d7d7f;
-  --color-neutral-light-8: #646466;
-  --color-neutral-light-9: #323233;
-  --color-neutral-light-10: #000000;
-
-  --color-primary-dark: #3a86f8;
-  --color-primary-hover-dark: #6ba4fa;
-  --color-on-primary-dark: #ffffff;
-  --color-background-dark: #040810;
-  --color-on-background-dark: #e6e9ef;
-  --color-surface-dark: #e6e9ef;
-
-  --color-neutral-dark-1: #ffffff;
-  --color-neutral-dark-2: #fefefe;
-  --color-neutral-dark-3: #f5f6f8;
-  --color-neutral-dark-4: #e1e0e5;
-  --color-neutral-dark-5: #c8c7cb;
-  --color-neutral-dark-6: #afaeb2;
-  --color-neutral-dark-7: #7d7d7f;
-  --color-neutral-dark-8: #646466;
-  --color-neutral-dark-9: #323233;
-  --color-neutral-dark-10: #000000;
-
-  --color-success: #90f677;
-  --color-error: #e63946;
 }
 
 @font-face {
