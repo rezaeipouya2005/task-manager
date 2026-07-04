@@ -1,23 +1,117 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #cccccc;
-  --color-primary-hover-light: #075cd9;
-  --color-on-primary-light: #ffffff;
-  --background-light: #ffffff;
-  --on-background-light: #191c1e;
-  --surface-light: #ffffff;
-  --dark-primary: #3a86f8;
-  --dark-primary-hover-Dark: #6ba4fa;
-  --dark-on-primary-light: #ffffff;
-  --dark-background-Dark: #040810;
-  --dark-on-background-Dark: #e6e9ef;
-  --dark-surface-Dark: #e6e9ef;
   --font-sans: "Vazirmatn", sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 900;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --text-regular-20: 20px;
+  --text-regular-18: 18px;
+  --text-regular-16: 16px;
+  --text-regular-15: 15px;
+  --text-regular-14: 14px;
+  --text-regular-13: 13px;
+  --text-regular-12: 12px;
+  --text-regular-11: 11px;
+  --text-regular-10: 10px;
+
+  --text-medium-28: 28px;
+  --text-medium-24: 24px;
+  --text-medium-20: 20px;
+  --text-medium-18: 18px;
+  --text-medium-16: 16px;
+  --text-medium-15: 15px;
+  --text-medium-14: 14px;
+  --text-medium-13: 13px;
+  --text-medium-12: 12px;
+  --text-medium-11: 11px;
+  --text-medium-10: 10px;
+
+  --text-bold-42: 42px;
+  --text-bold-36: 36px;
+  --text-bold-32: 32px;
+  --text-bold-28: 28px;
+  --text-bold-24: 24px;
+  --text-bold-20: 20px;
+  --text-bold-18: 18px;
+  --text-bold-16: 16px;
+  --text-bold-14: 14px;
+  --text-bold-13: 13px;
+  --text-bold-12: 12px;
+  --text-bold-11: 11px;
+  --text-bold-10: 10px;
+
+  --text-semibold-42: 42px;
+  --text-semibold-36: 36px;
+  --text-semibold-32: 32px;
+  --text-semibold-28: 28px;
+  --text-semibold-24: 24px;
+  --text-semibold-20: 20px;
+  --text-semibold-18: 18px;
+  --text-semibold-16: 16px;
+  --text-semibold-14: 14px;
+  --text-semibold-13: 13px;
+  --text-semibold-12: 12px;
+  --text-semibold-11: 11px;
+  --text-semibold-10: 10px;
+
+  --text-display-80: 80px;
+  --text-display-72: 72px;
+  --text-display-64: 64px;
+  --text-display-56: 56px;
+  --text-display-48: 48px;
+  --text-display-40: 40px;
+  --text-display-36: 36px;
+  --text-display-32: 32px;
+  --text-display-28: 28px;
+  --text-display-24: 24px;
+
+  --color-primary: #cccccc;
+  --color-primary-hover: #075cd9;
+  --color-on-primary: #ffffff;
+  --color-background: #ffffff;
+  --color-on-background: #191c1e;
+  --color-surface: #ffffff;
+
+  --color-neutral-light-1: #ffffff;
+  --color-neutral-light-2: #fefefe;
+  --color-neutral-light-3: #f5f6f8;
+  --color-neutral-light-4: #e1e0e5;
+  --color-neutral-light-5: #c8c7cb;
+  --color-neutral-light-6: #afaeb2;
+  --color-neutral-light-7: #7d7d7f;
+  --color-neutral-light-8: #646466;
+  --color-neutral-light-9: #323233;
+  --color-neutral-light-10: #000000;
+
+  --color-primary-dark: #3a86f8;
+  --color-primary-hover-dark: #6ba4fa;
+  --color-on-primary-dark: #ffffff;
+  --color-background-dark: #040810;
+  --color-on-background-dark: #e6e9ef;
+  --color-surface-dark: #e6e9ef;
+
+  --color-neutral-dark-1: #ffffff;
+  --color-neutral-dark-2: #fefefe;
+  --color-neutral-dark-3: #f5f6f8;
+  --color-neutral-dark-4: #e1e0e5;
+  --color-neutral-dark-5: #c8c7cb;
+  --color-neutral-dark-6: #afaeb2;
+  --color-neutral-dark-7: #7d7d7f;
+  --color-neutral-dark-8: #646466;
+  --color-neutral-dark-9: #323233;
+  --color-neutral-dark-10: #000000;
+
+  --color-success: #90f677;
+  --color-error: #e63946;
 }
+
 @font-face {
   font-family: "Vazirmatn";
-  src: url("./fonts/Vazirmatn-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../assets/fonts/Vazirmatn-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
   font-style: normal;
 }

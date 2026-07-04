@@ -7,18 +7,21 @@
       "Courier New", monospace;
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
-    --text-2xl: 1.5rem;
-    --text-2xl--line-height: calc(2 / 1.5);
-    --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
-    --text-5xl: 3rem;
-    --text-5xl--line-height: 1;
-    --text-9xl: 8rem;
-    --text-9xl--line-height: 1;
+    --font-weight-medium: 900;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-weight-regular: 400;
+    --text-regular-14: 14px;
+    --text-medium-16: 16px;
+    --text-semibold-20: 20px;
+    --text-display-48: 48px;
     --color-primary: #cccccc;
-    --color-primary-hover-light: #075cd9;
+    --color-primary-hover: #075cd9;
+    --color-on-background: #191c1e;
+    --color-success: #90f677;
+    --color-error: #e63946;
   }
 }
 @layer base {
@@ -173,13 +176,20 @@
   .font-sans {
     font-family: var(--font-sans);
   }
-  .text-primary-hover-light {
-    color: var(--color-primary-hover-light);
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-primary-hover {
+    color: var(--color-primary-hover);
   }
 }
 @font-face {
   font-family: "Vazirmatn";
-  src: url("./fonts/Vazirmatn-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../assets/fonts/Vazirmatn-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
   font-style: normal;
 }
