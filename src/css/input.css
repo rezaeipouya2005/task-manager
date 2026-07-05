@@ -3,91 +3,126 @@
 @layer base {
   :root {
     /* Primary */
-    --color-primary: #007bff;
-    --color-primary-hover: #075cd9;
-    --color-on-primary: #ffffff;
+    --primary: #007bff;
+    --primary-hover: #075cd9;
+    --on-primary: #ffffff;
 
     /* Background & Surface */
-    --color-background: #ffffff;
-    --color-on-background: #191c1e;
-    --color-surface: #ffffff;
-    --color-surface-primary: #ffffff;
+    --background: #ffffff;
+    --on-background: #191c1e;
+    --surface: #ffffff;
+    --surface-primary: #ffffff;
 
     /* Text */
-    --color-text-primary: #242424;
-    --color-text-secondary: #7d7d7f;
+    --text-primary: #242424;
+    --text-secondary: #7d7d7f;
 
     /* Priority */
-    --color-high: #ff5f37;
-    --color-medium: #ffaf37;
-    --color-low: #11a483;
+    --high: #ff5f37;
+    --medium: #ffaf37;
+    --low: #11a483;
 
     /* Status */
-    --color-success: #11a483;
-    --color-error: #ff5f37;
-    --color-warning: #ffaf37;
+    --success: #11a483;
+    --error: #ff5f37;
+    --warning: #ffaf37;
 
     /* Neutral */
-    --color-neutral-1: #ffffff;
-    --color-neutral-2: #fefefe;
-    --color-neutral-3: #f5f6f8;
-    --color-neutral-4: #e1e0e5;
-    --color-neutral-5: #c8c7cb;
-    --color-neutral-6: #afaeb2;
-    --color-neutral-7: #7d7d7f;
-    --color-neutral-8: #646466;
-    --color-neutral-9: #323233;
-    --color-neutral-10: #000000;
+    --neutral-1: #ffffff;
+    --neutral-2: #fefefe;
+    --neutral-3: #f5f6f8;
+    --neutral-4: #e1e0e5;
+    --neutral-5: #c8c7cb;
+    --neutral-6: #afaeb2;
+    --neutral-7: #7d7d7f;
+    --neutral-8: #646466;
+    --neutral-9: #323233;
+    --neutral-10: #000000;
   }
 
   .dark {
     /* Primary */
-    --color-primary: #3a86f8;
-    --color-primary-hover: #6ba4fa;
-    --color-on-primary: #ffffff;
+    --primary: #3a86f8;
+    --primary-hover: #6ba4fa;
+    --on-primary: #ffffff;
 
     /* Background & Surface */
-    --color-background: #040810;
-    --color-on-background: #e6e9ef;
-    --color-surface: #e6e9ef;
-    --color-surface-primary: #060c18;
+    --background: #040810;
+    --on-background: #e6e9ef;
+    --surface: #e6e9ef;
+    --surface-primary: #060c18;
 
     /* Text */
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #7d7d7f;
+    --text-primary: #ffffff;
+    --text-secondary: #7d7d7f;
 
     /* Priority */
-    --color-high: #ff5f37;
-    --color-medium: #ffaf37;
-    --color-low: #11a483;
+    --high: #ff5f37;
+    --medium: #ffaf37;
+    --low: #11a483;
 
     /* Status */
-    --color-success: #11a483;
-    --color-error: #ff5f37;
-    --color-warning: #ffaf37;
+    --success: #11a483;
+    --error: #ff5f37;
+    --warning: #ffaf37;
 
     /* Neutral */
-    --color-neutral-1: #000000;
-    --color-neutral-2: #323233;
-    --color-neutral-3: #646466;
-    --color-neutral-4: #7d7d7f;
-    --color-neutral-5: #afaeb2;
-    --color-neutral-6: #c8c7cb;
-    --color-neutral-7: #e1e0e5;
-    --color-neutral-8: #f5f6f8;
-    --color-neutral-9: #fefefe;
-    --color-neutral-10: #ffffff;
+    --neutral-1: #000000;
+    --neutral-2: #323233;
+    --neutral-3: #646466;
+    --neutral-4: #7d7d7f;
+    --neutral-5: #afaeb2;
+    --neutral-6: #c8c7cb;
+    --neutral-7: #e1e0e5;
+    --neutral-8: #f5f6f8;
+    --neutral-9: #fefefe;
+    --neutral-10: #ffffff;
   }
 }
 
 @theme {
+  /* Fonts */
   --font-sans: "Vazirmatn", sans-serif;
 
+  /* Font Weights */
   --font-weight-regular: 400;
-  --font-weight-medium: 900;
+  --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
+  /* Colors */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-on-primary: var(--on-primary);
+
+  --color-background: var(--background);
+  --color-on-background: var(--on-background);
+  --color-surface: var(--surface);
+  --color-surface-primary: var(--surface-primary);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  --color-high: var(--high);
+  --color-medium: var(--medium);
+  --color-low: var(--low);
+
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+
+  --color-neutral-1: var(--neutral-1);
+  --color-neutral-2: var(--neutral-2);
+  --color-neutral-3: var(--neutral-3);
+  --color-neutral-4: var(--neutral-4);
+  --color-neutral-5: var(--neutral-5);
+  --color-neutral-6: var(--neutral-6);
+  --color-neutral-7: var(--neutral-7);
+  --color-neutral-8: var(--neutral-8);
+  --color-neutral-9: var(--neutral-9);
+  --color-neutral-10: var(--neutral-10);
+
+  /* Font Sizes */
   --text-regular-20: 20px;
   --text-regular-18: 18px;
   --text-regular-16: 16px;
