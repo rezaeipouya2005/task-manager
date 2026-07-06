@@ -7,46 +7,97 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <title>Document</title>
   </head>
-  <body class="font-sans">
-    <h1 class="text-xl text-primary-hover">سلام دنیااااااااا</h1>
-    <h2
-      class="text-primary"
-      style="
-        font-size: var(--text-display-48);
-        font-weight: var(--font-weight-bold);
-      "
-    >
-      تست تیتر بولد
-    </h2>
+  <body class="font-sans relative">
+    <sidebar class="absolute top-0 right-0 bg-blue-900 p-2  ">
 
-    <p
-      style="
-        font-size: var(--text-regular-14);
-        font-weight: var(--font-weight-regular);
-        color: var(--color-on-background);
-      "
-    >
-      تست متن معمولی
-    </p>
+         <div class="flex flex-row justify-between items-center hidden md:block bg-amber-600    ">
+<div class="flex flex-col items-end "  ><h1  class="text-bold-18 font-bold " >سلام، رویا</h1><!--رنگش نبود-->
+<p  class="text-regular-14 font-semibold  text-[#7D7D7F] " >سه‌شنبه، ۵ بهمن ۱۴۰۲</p></div>
+<img src="./src/assets/image/Ellipse 136.png" alt="profile-pic " class="size-14">
+      </div>
+      
+      <div class="flex flex-row items-center justify-between   block  md:hidden ">
+        <img
+          src="./src/assets/icon/Frame 12161 (1).svg"
+          alt=""
+          class="flex-row mr-4"
+        />
+        <h1 class="p-4 font-bold text-base">کوئرا لیست</h1>
+      </div>
+      <div>
+        <ul class="flex flex-col items-end justify-center p-4 gap-4 pb-32 ">
+          <li  class=" hover:bg-neutral-light-3 w-full  rounded-lg " >
+            <button class="flex flex-row justify-end items-center gap-2 w-full p-1 ">
+              <span class="font-semibold hover:text-primary-hover hover:font-bold text-base  ">خانه</span>
+              <img
+                src="./src/assets/icon/home-2.svg"
+                alt=""
+                class="hover:text-primary-hover"
+              />
+            </button>
+          </li  class=" hover:bg-neutral-light-3 w-full ">
+          <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
+            <button class="flex flex-row justify-end items-center gap-2 w-full p-1  ">
+              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold  ">تسک ها</span>
+              <img src="./src/assets/icon/task-square.svg" alt="" />
+            </button>
+          </li>
+          <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
+            <button class="flex flex-row justify-end items-center gap-2 w-full p-1  ">
+              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold " >تقویم</span>
+              <img src="./src/assets/icon/calendar.svg" alt="" />
+            </button>
+          </li>
+          <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
+            <button class="flex flex-row justify-end items-center gap-2   w-full p-1  ">
+              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold " >گزارشات</span>
+              <img src="./src/assets/icon/arrange-square-2.svg" alt="" />
+            </button>
+          </li>
+           <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
+            <button class="flex flex-row justify-end items-center gap-2   w-full p-1  ">
+              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold " >تنظیمات</span>
+              <img src="./src/assets/icon/setting.svg" alt="" />
+            </button>
+            </li>
+               <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
+            <button class="flex flex-row justify-end items-center gap-2   w-full p-1  ">
+              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold " >پشتیبانی</span>
+              <img src="./src/assets/icon/24-support.svg" alt="" />
+            </button>
+            </li>
+                   <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
+            <button class="flex flex-row justify-end items-center gap-2   w-full p-1  ">
+              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold " >پروفایل</span>
+              <img src="./src/assets/icon/profile.svg" alt="" />
+            </button>
+            </li>
 
-    <p
-      style="
-        font-size: var(--text-medium-16);
-        font-weight: var(--font-weight-medium);
-        color: var(--color-success);
-      "
-    >
-      تست موفقیت
-    </p>
-
-    <p
-      style="
-        font-size: var(--text-semibold-20);
-        font-weight: var(--font-weight-semibold);
-        color: var(--color-error);
-      "
-    >
-      تست خطا
-    </p>
+        </ul >
+      </div>
+ <div class=" rounded-xl p-3 bg-gray-100 w-full  " >
+  <div class="flex p-1 gap-4 " >
+    <button class="gap-2 flex flex-row items-center justify-start  "  >
+      <span class="font-semibold text-regular-14">
+تاریک
+      </span>
+  <img src="./src/assets/icon/moon.svg" alt="">
+    </button>
+    <button class="gap-2  flex flex-row justify-start items-center   active:bg-surface rounded-xl py-2  " >
+      <span  class="font-semibold text-regular-14">
+روشن
+      </span>
+      <img src="./src/assets/icon/sun.svg" alt="">
+    </button>
+  </div>
+ </div>
+ <div class="border-b border-gray-200 my-4 mx-2"></div>
+      <div class="flex flex-row justify-end">
+        <button class="flex flex-row items-center justify-end gap-2 w-full p-2">
+  <span class="font-semibold text-regular-14 ">خروج</span><!--رنگش نبود-->
+  <img src="./src/assets/icon/logout.svg" alt="logout"><!--svg تگشو گذاشتنی به هم میریزه-->
+</button>
+      </div>
+    </sidebar>
   </body>
 </html>
