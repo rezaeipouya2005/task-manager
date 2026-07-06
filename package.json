@@ -1,9 +1,10 @@
 {
     "scripts": {
-    "watch": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
-  },
-  "dependencies": {
-    "@tailwindcss/cli": "^4.3.2",
-    "tailwindcss": "^4.3.2"
-  }
+        "watch": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
+    },
+    "dependencies": {
+        "@tailwindcss/cli": "^4.3.2",
+        "tailwindcss": "^4.3.2",
+        "watch": "^1.0.2"
+    }
 }
