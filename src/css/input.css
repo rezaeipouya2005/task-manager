@@ -6,6 +6,9 @@
     --primary: #007bff;
     --primary-hover: #075cd9;
     --on-primary: #ffffff;
+    --nav-hover-bg: #f5faff;
+    --theme-btn-active: #e2e8f0;
+    --theme-btn-inactive: #f1f5f9;
 
     /* Background & Surface */
     --background: #ffffff;
@@ -16,6 +19,7 @@
     /* Text */
     --text-primary: #242424;
     --text-secondary: #7d7d7f;
+    --nav-text: #525252;
 
     /* Priority */
     --high: #ff5f37;
@@ -54,16 +58,20 @@
     --primary: #3a86f8;
     --primary-hover: #6ba4fa;
     --on-primary: #ffffff;
+    --nav-hover-bg: #041933;
+    --theme-btn-active: #002247;
+    --theme-btn-inactive: #0c1b31;
 
     /* Background & Surface */
     --background: #040810;
     --on-background: #e6e9ef;
-    --surface: #e6e9ef;
+    --surface: #091120;
     --surface-primary: #060c18;
 
     /* Text */
     --text-primary: #ffffff;
     --text-secondary: #7d7d7f;
+    --nav-text: #ffffff;
 
     /* Priority */
     --high: #ff5f37;
@@ -107,6 +115,9 @@
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
   --color-on-primary: var(--on-primary);
+  --color-nav-hover-bg: var(--nav-hover-bg);
+  --color-theme-btn-active: var(--theme-btn-active);
+  --color-theme-btn-inactive: var(--theme-btn-inactive);
 
   --color-background: var(--background);
   --color-on-background: var(--on-background);
@@ -115,6 +126,7 @@
 
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
+  --color-nav-text: var(--nav-text);
 
   --color-high: var(--high);
   --color-medium: var(--medium);
@@ -203,6 +215,45 @@
   --text-display-32: 32px;
   --text-display-28: 28px;
   --text-display-24: 24px;
+}
+@layer utilities {
+  .theme-btn-wrapper {
+    background-color: var(--theme-btn-inactive);
+    border-radius: 8px;
+    padding: 4px;
+    gap: 4px;
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  .theme-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    color: var(--neutral-6);
+  }
+  .theme-btn:hover {
+    background-color: var(--theme-btn-active);
+    color: var(--text-primary);
+  }
+  .theme-btn.active {
+    background-color: var(--theme-btn-active);
+    color: var(--text-primary);
+  }
+  .theme-btn span {
+    font-size: 14px;
+    font-weight: 600;
+    color: inherit;
+  }
+  .theme-btn svg {
+    width: 16px;
+    height: 16px;
+    color: inherit;
+  }
 }
 
 @font-face {
