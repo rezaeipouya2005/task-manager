@@ -10,111 +10,563 @@
     <title>quera</title>
 
   </head>
-  <body class="font-sans relative">
+  <body class="font-sans relative bg-background">
+    <div
+      id="overlay"
+      class="hidden fixed inset-0 bg-black/40 z-30 md:hidden"
+    ></div>
 
-       <header class="mx-4 mt-4 h-20 rounded-2xl bg-white px-8 flex items-center justify-between shadow-md md:shadow-none">
-           <button >
-         <img  class="block md:hidden" src="/hamburger-menu.light.svg" alt="hamburger-menu.light" />
-        <img  class="hidden dark:block md:dark:hidden" src="/hamburger-menu.dark.svg" alt="hamburger-menu.dark" />
-       </button>
+    <!-- ============================= -->
+    <!-- Sidebar                       -->
+    <!-- ============================= -->
+    <aside
+      id="sidebar"
+      class="fixed top-0 right-0 h-screen w-[280px] bg-surface-primary flex flex-col z-40 translate-x-full md:translate-x-0 transition-transform duration-300 border-l border-neutral-4"
+    >
+      <!-- هدر sidebar موبایل -->
+      <div class="md:hidden flex items-center justify-between px-4 py-3">
+        <h1 class="font-bold text-base text-text-primary">کوئرا لیست</h1>
+        <button id="close-btn" class="w-8 h-8 flex items-center justify-center">
+          <svg
+            class="w-3 h-3 text-text-primary"
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.75 10.7503L10.7503 0.75"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10.7503 10.7503L0.75 0.75"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
 
-        <div>
-            <h1 class="font-bold  absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 text-base max-sm:text-lg md:text-xl text-[#242424] dark:text-white">کوئرا لیست</h1>
-        </div> 
-    </header>
-
-    <aside class="absolute top-0 right-0 p-4 z-50 hidden md:block ">
-<div class="flex flex-row items-center justify-between  block  md:hidden ">
+      <!-- پروفایل دسکتاپ -->
+      <div class="hidden md:flex items-center justify-start gap-3 px-4 py-5">
         <img
-          src="./src/assets/icon/Frame 12161 (1).svg"
-          alt=""
-          class="flex-row mr-4"
+          src="./src/assets/image/Ellipse 136.png"
+          alt="profile"
+          class="w-12 h-12 rounded-full object-cover"
         />
-        <h1 class="p-4 font-bold text-base">کوئرا لیست</h1>
+        <div class="text-right">
+          <h2 class="font-bold text-base text-text-primary">سلام، رویا</h2>
+          <p class="text-xs text-text-secondary mt-1">سه‌شنبه، ۵ بهمن ۱۴۰۲</p>
+        </div>
       </div>
-         <div class="md:flex md:flex-row md:justify-between md:items-center hidden md:block  md:my-10  ">
-<div class="flex flex-col items-end "  ><h1  class="text-bold-18 font-bold " >سلام، رویا</h1>
-<p  class="text-regular-14 font-semibold  text-[#7D7D7F] " >سه‌شنبه، ۵ بهمن ۱۴۰۲</p></div>
-<img src="./src/assets/image/Ellipse 136.png" alt="profile-pic " class="size-14">
-      </div>
-      
-      
-      <div>
-        <ul class="flex flex-col items-end justify-center p-4 gap-4 pb-24 ">
-          <li  class=" hover:bg-neutral-light-3 w-full  rounded-lg " >
-            <button class="flex flex-row justify-end items-center gap-2 w-full p-1 ">
-              <span class="font-semibold hover:text-primary-hover hover:font-bold text-base  ">خانه</span>
-              <img
-                src="./src/assets/icon/home-2.svg"
-                alt=""
-                class="hover:text-primary-hover"
-              />
-            </button>
-          </li  class=" hover:bg-neutral-light-3 w-full ">
-          <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
-            <button class="flex flex-row justify-end items-center gap-2 w-full p-1  ">
-              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold  ">تسک ها</span>
-              <img src="./src/assets/icon/task-square.svg" alt="" />
-            </button>
-          </li>
-          <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
-            <button class="flex flex-row justify-end items-center gap-2 w-full p-1  ">
-              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold " >تقویم</span>
-              <img src="./src/assets/icon/calendar.svg" alt="" />
-            </button>
-          </li>
-          <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
-            <button class="flex flex-row justify-end items-center gap-2   w-full p-1  ">
-              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold " >گزارشات</span>
-              <img src="./src/assets/icon/arrange-square-2.svg" alt="" />
-            </button>
-          </li>
-           <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
-            <button class="flex flex-row justify-end items-center gap-2   w-full p-1  ">
-              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold " >تنظیمات</span>
-              <img src="./src/assets/icon/setting.svg" alt="" />
-            </button>
-            </li>
-               <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
-            <button class="flex flex-row justify-end items-center gap-2   w-full p-1  ">
-              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold " >پشتیبانی</span>
-              <img src="./src/assets/icon/24-support.svg" alt="" />
-            </button>
-            </li>
-                   <li  class=" hover:bg-neutral-light-3 w-full rounded-lg ">
-            <button class="flex flex-row justify-end items-center gap-2   w-full p-1  ">
-              <span class="hover:text-primary-hover hover:font-bold text-base  font-semibold " >پروفایل</span>
-              <img src="./src/assets/icon/profile.svg" alt="" />
-            </button>
-            </li>
 
-        </ul >
-      </div>
- <div class=" rounded-xl p-1 bg-gray-100 w-full  " >
-  <div class="flex  gap-2 " >
-    <button class="gap-2 flex flex-row items-center justify-start py-2 px-5 hover:bg-surface rounded-xl "  >
-      <span class="font-semibold text-regular-14">
-تاریک
-      </span>
-  <img src="./src/assets/icon/moon.svg" alt="">
-    </button>
-    <button class="gap-2  flex flex-row justify-start items-center py-2 px-5 hover:bg-surface rounded-xl   " >
-      <span  class="font-semibold text-regular-14">
-روشن
-      </span>
-      <img src="./src/assets/icon/sun.svg" alt="">
-    </button>
-  </div>
- </div>
- <div class="border-b border-gray-200 my-4 mx-2"></div>
-      <div class="flex flex-row justify-end">
-        <button class="flex flex-row items-center justify-end gap-2 w-full p-2">
-  <span class="font-semibold text-regular-14 ">خروج</span><!--رنگش نبود-->
-  <img src="./src/assets/icon/logout.svg" alt="logout"><!--svg تگشو گذاشتنی به هم میریزه-->
-</button>
+      <!-- منو -->
+      <nav class="flex-1 px-4 py-4 overflow-y-auto">
+        <ul class="flex flex-col gap-4">
+          <li>
+            <button
+              class="group flex items-center justify-start w-full py-2 pr-8 pl-2 rounded-lg hover:bg-nav-hover-bg gap-4"
+            >
+              <svg
+                class="w-5 h-5 text-nav-text group-hover:text-primary"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.6979 5.68373L11.8979 2.3254C10.5896 1.40873 8.58125 1.45873 7.32292 2.43373L3.14792 5.69206C2.31458 6.34206 1.65625 7.6754 1.65625 8.7254V14.4754C1.65625 16.6004 3.38125 18.3337 5.50625 18.3337H14.4896C16.6146 18.3337 18.3396 16.6087 18.3396 14.4837V8.83373C18.3396 7.70873 17.6146 6.3254 16.6979 5.68373ZM10.6229 15.0004C10.6229 15.3421 10.3396 15.6254 9.99792 15.6254C9.65625 15.6254 9.37292 15.3421 9.37292 15.0004V12.5004C9.37292 12.1587 9.65625 11.8754 9.99792 11.8754C10.3396 11.8754 10.6229 12.1587 10.6229 12.5004V15.0004Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span
+                class="text-nav-text group-hover:text-primary font-semibold text-sm"
+                >خانه</span
+              >
+            </button>
+          </li>
+          <li>
+            <button
+              class="group flex items-center justify-start w-full py-2 pr-8 pl-2 rounded-lg hover:bg-nav-hover-bg gap-4"
+            >
+              <svg
+                class="w-5 h-5 text-nav-text group-hover:text-primary"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_82_7932)">
+                  <path
+                    d="M10.3086 7.39999H14.6836"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M5.31641 7.39999L5.94141 8.02499L7.81641 6.14999"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M10.3086 13.2333H14.6836"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M5.31641 13.2333L5.94141 13.8583L7.81641 11.9833"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M7.49935 18.3333H12.4993C16.666 18.3333 18.3327 16.6667 18.3327 12.5V7.49999C18.3327 3.33332 16.666 1.66666 12.4993 1.66666H7.49935C3.33268 1.66666 1.66602 3.33332 1.66602 7.49999V12.5C1.66602 16.6667 3.33268 18.3333 7.49935 18.3333Z"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_82_7932">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span
+                class="text-nav-text group-hover:text-primary font-semibold text-sm"
+                >تسک‌ها</span
+              >
+            </button>
+          </li>
+          <li>
+            <button
+              class="group flex items-center justify-start w-full py-2 pr-8 pl-2 rounded-lg hover:bg-nav-hover-bg gap-4"
+            >
+              <svg
+                class="w-5 h-5 text-nav-text group-hover:text-primary"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.66602 1.66669V4.16669"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.334 1.66669V4.16669"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M2.91602 7.57501H17.0827"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.5 7.08335V14.1667C17.5 16.6667 16.25 18.3334 13.3333 18.3334H6.66667C3.75 18.3334 2.5 16.6667 2.5 14.1667V7.08335C2.5 4.58335 3.75 2.91669 6.66667 2.91669H13.3333C16.25 2.91669 17.5 4.58335 17.5 7.08335Z"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.0781 11.4167H13.0856"
+                  stroke="currentColor"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.0781 13.9167H13.0856"
+                  stroke="currentColor"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.99607 11.4167H10.0036"
+                  stroke="currentColor"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M9.99607 13.9167H10.0036"
+                  stroke="currentColor"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6.91209 11.4167H6.91957"
+                  stroke="currentColor"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M6.91209 13.9167H6.91957"
+                  stroke="currentColor"
+                  stroke-width="1.66667"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="text-nav-text group-hover:text-primary font-semibold text-sm"
+                >تقویم</span
+              >
+            </button>
+          </li>
+          <li>
+            <button
+              class="group flex items-center justify-start w-full py-2 pr-8 pl-2 rounded-lg hover:bg-nav-hover-bg gap-4"
+            >
+              <svg
+                class="w-5 h-5 text-nav-text group-hover:text-primary"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_82_7938)">
+                  <path
+                    d="M7.49935 18.3334H12.4993C16.666 18.3334 18.3327 16.6667 18.3327 12.5V7.50002C18.3327 3.33335 16.666 1.66669 12.4993 1.66669H7.49935C3.33268 1.66669 1.66602 3.33335 1.66602 7.50002V12.5C1.66602 16.6667 3.33268 18.3334 7.49935 18.3334Z"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.48255 14.2916L5.94922 11.7583"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.48242 5.70831V14.2916"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11.5176 5.70831L14.0509 8.24165"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11.5176 14.2916V5.70831"
+                    stroke="currentColor"
+                    stroke-width="1.25"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_82_7938">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span
+                class="text-nav-text group-hover:text-primary font-semibold text-sm"
+                >گزارشات</span
+              >
+            </button>
+          </li>
+          <li>
+            <button
+              class="group flex items-center justify-start w-full py-2 pr-8 pl-2 rounded-lg hover:bg-nav-hover-bg gap-4"
+            >
+              <svg
+                class="w-5 h-5 text-nav-text group-hover:text-primary"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.5 7.59169V12.4C2.5 14.1667 2.5 14.1667 4.16667 15.2917L8.75 17.9417C9.44167 18.3417 10.5667 18.3417 11.25 17.9417L15.8333 15.2917C17.5 14.1667 17.5 14.1667 17.5 12.4084V7.59169C17.5 5.83336 17.5 5.83336 15.8333 4.70836L11.25 2.05836C10.5667 1.65836 9.44167 1.65836 8.75 2.05836L4.16667 4.70836C2.5 5.83336 2.5 5.83336 2.5 7.59169Z"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="text-nav-text group-hover:text-primary font-semibold text-sm"
+                >تنظیمات</span
+              >
+            </button>
+          </li>
+          <li>
+            <button
+              class="group flex items-center justify-start w-full py-2 pr-8 pl-2 rounded-lg hover:bg-nav-hover-bg gap-4"
+            >
+              <svg
+                class="w-5 h-5 text-nav-text group-hover:text-primary"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15 15.7166H14.3667C13.7 15.7166 13.0667 15.975 12.6 16.4416L11.175 17.85C10.525 18.4917 9.46667 18.4917 8.81667 17.85L7.39166 16.4416C6.925 15.975 6.28333 15.7166 5.625 15.7166H5C3.61667 15.7166 2.5 14.6083 2.5 13.2417V4.14996C2.5 2.7833 3.61667 1.67499 5 1.67499H15C16.3833 1.67499 17.5 2.7833 17.5 4.14996V13.2417C17.5 14.6 16.3833 15.7166 15 15.7166Z"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.83398 7.63336C5.83398 6.85836 6.46732 6.22498 7.24232 6.22498C8.01732 6.22498 8.65065 6.85836 8.65065 7.63336C8.65065 9.20003 6.42565 9.36669 5.93398 10.8584C5.83398 11.1667 6.09232 11.475 6.41732 11.475H8.65065"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.3674 11.4667V6.70838C13.3674 6.49171 13.2258 6.3 13.0174 6.24166C12.8091 6.18333 12.5841 6.26666 12.4675 6.45C11.8675 7.41666 11.2174 8.51667 10.6508 9.48334C10.5591 9.64167 10.5591 9.85001 10.6508 10.0083C10.7424 10.1667 10.9175 10.2666 11.1091 10.2666H14.1674"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="text-nav-text group-hover:text-primary font-semibold text-sm"
+                >پشتیبانی</span
+              >
+            </button>
+          </li>
+          <li>
+            <button
+              class="group flex items-center justify-start w-full py-2 pr-8 pl-2 rounded-lg hover:bg-nav-hover-bg gap-4"
+            >
+              <svg
+                class="w-5 h-5 text-nav-text group-hover:text-primary"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.1341 9.05835C10.0508 9.05002 9.95078 9.05002 9.85911 9.05835C7.87578 8.99169 6.30078 7.36669 6.30078 5.36669C6.30078 3.32502 7.95078 1.66669 10.0008 1.66669C12.0424 1.66669 13.7008 3.32502 13.7008 5.36669C13.6924 7.36669 12.1174 8.99169 10.1341 9.05835Z"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.96758 12.1333C3.95091 13.4833 3.95091 15.6833 5.96758 17.025C8.25924 18.5583 12.0176 18.5583 14.3092 17.025C16.3259 15.675 16.3259 13.475 14.3092 12.1333C12.0259 10.6083 8.26758 10.6083 5.96758 12.1333Z"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span
+                class="text-nav-text group-hover:text-primary font-semibold text-sm"
+                >پروفایل</span
+              >
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- دکمه تم و خروج -->
+      <div class="px-4 pb-6">
+        <div class="theme-btn-wrapper">
+          <button id="light-btn" class="theme-btn">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7.99935 12.3333C10.3926 12.3333 12.3327 10.3932 12.3327 7.99996C12.3327 5.60673 10.3926 3.66663 7.99935 3.66663C5.60612 3.66663 3.66602 5.60673 3.66602 7.99996C3.66602 10.3932 5.60612 12.3333 7.99935 12.3333Z"
+                stroke="currentColor"
+                stroke-width="1.16667"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12.7606 12.76L12.674 12.6734M12.674 3.32671L12.7606 3.24004L12.674 3.32671ZM3.24065 12.76L3.32732 12.6734L3.24065 12.76ZM8.00065 1.38671V1.33337V1.38671ZM8.00065 14.6667V14.6134V14.6667ZM1.38732 8.00004H1.33398H1.38732ZM14.6673 8.00004H14.614H14.6673ZM3.32732 3.32671L3.24065 3.24004L3.32732 3.32671Z"
+                stroke="currentColor"
+                stroke-width="1.55556"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>روشن</span>
+          </button>
+          <button id="dark-btn" class="theme-btn">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.35404 8.27997C1.59404 11.7133 4.50738 14.5066 7.99404 14.66C10.454 14.7666 12.654 13.62 13.974 11.8133C14.5207 11.0733 14.2274 10.58 13.314 10.7466C12.8674 10.8266 12.4074 10.86 11.9274 10.84C8.66738 10.7066 6.00071 7.97997 5.98738 4.75997C5.98071 3.89331 6.16071 3.07331 6.48738 2.32664C6.84738 1.49997 6.41404 1.10664 5.58071 1.45997C2.94071 2.57331 1.13404 5.23331 1.35404 8.27997Z"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span>تاریک</span>
+          </button>
+        </div>
+        <div class="border-t border-neutral-4 pt-4">
+          <button
+            class="group flex items-center justify-start gap-2 w-full px-2 py-2"
+          >
+            <svg
+              class="w-5 h-5 text-nav-text group-hover:text-error"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_82_7959)">
+                <path
+                  d="M7.41602 6.29995C7.67435 3.29995 9.21602 2.07495 12.591 2.07495H12.6993C16.4243 2.07495 17.916 3.56662 17.916 7.29162V12.725C17.916 16.45 16.4243 17.9416 12.6993 17.9416H12.591C9.24102 17.9416 7.69935 16.7333 7.42435 13.7833"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12.5009 10H3.01758"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M4.87565 7.20837L2.08398 10L4.87565 12.7917"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_82_7959">
+                  <rect width="20" height="20" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span
+              class="text-sm text-nav-text group-hover:text-error font-semibold"
+              >خروج</span
+            >
+          </button>
+        </div>
       </div>
     </aside>
-  
+      <header
+        class="md:hidden flex items-center justify-between px-4 py-3 mx-4 mt-4 bg-surface rounded-2xl border border-neutral-4 shadow-sm"
+      >
+        <button id="menu-btn" class="p-1">
+          <svg
+            class="w-6 h-6 text-nav-text"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 7H21"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M3 12H21"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M3 17H21"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <h1 class="font-bold text-lg text-text-primary">کوئرا لیست</h1>
+        <div class="w-8"></div>
+      </header>
+
+      <div class="px-4 md:px-8 py-6 max-w-3xl md:max-w-none">
+        <div class="md:hidden flex items-center justify-start gap-3 mb-8 mt-4">
+          <img
+            src="./src/assets/image/Ellipse 136.png"
+            alt="profile"
+            class="w-16 h-16 rounded-full object-cover border border-neutral-4"
+          />
+          <div class="text-right">
+            <h2 class="font-bold text-2xl text-text-primary">سلام، رویا</h2>
+            <p class="text-sm text-text-secondary mt-1">
+              امروز، سه‌شنبه ۵ بهمن ۱۴۰۲
+            </p>
+          </div>
+        </div>
+
   
     <main class="max-w-[744px] w-full mx-auto px-4 md:px-0 pt-8 md:pt-16 ">
       <div class="pt-8 md:pt-[74px]">
