@@ -585,7 +585,7 @@
        </div>
 
        <form id="task-form" class="hidden">
-        <div class="w-full max-w-[744px] min-h-[105px] h-auto bg-white border-2 border-border rounded-3 flex items-center justify-between relative mt-2.5">
+        <div class="w-full max-w-[744px] min-h-[105px] h-auto bg-white border-2 border-border rounded-md flex items-center justify-between relative mt-2.5">
           <img src="./src/asstes/icon/Frame 1000005475 red.svg" alt="" class="" />
 
           <div class="flex items-start gap-3 flex-1  pr-2">
@@ -602,16 +602,16 @@
            <textarea id="task-description" placeholder="توضیحات"
             class="top-[59px] right-[52px] pt-2.5 bottom-6 text-neutral-7 mt-2 leading-6 "></textarea>
 
-            <button type="button" class="task-priority" data-priority="high">بالا</button>
-            <button type="button" class="task-priority" data-priority="medium">متوسط</button>
-            <button type="button" class="task-priority" data-priority="low">پایین</button>
+            <button type="button" class="task-priority w-[54px] h-6 bg-high-bg rounded-1 text-high  right-[329px]" data-priority="high">بالا</button>
+            <button type="button" class="task-priority w-[54px] h-6 bg-medium-bg rounded-1 text-medium  right-[329px]" data-priority="medium">متوسط</button>
+            <button type="button" class="task-priority w-[54px] h-6 bg-low-bg rounded-1 text-low  right-[329px]" data-priority="low">پایین</button>
 
            <div class="border-t border-border p-6 flex justify-end">
            <button id="btn" type="submit"   class="text-neutral-1 bg-primary rounded-md  px-4 py-2 ">اضافه کردن تسک</button>
           </div>
-          
+          </div>
         </form>
-        
+
          <div class="pt-10 md:pt-12">
           <p class="text-text-primary font-extrabold text-base  md:text-[20px]">تسک‌های انجام شده</p>
           <p class="text-neutral-6">3 تسک انجام شده است.</p>
@@ -633,8 +633,12 @@
       </div>
 
 
-      <div id="task-list" class="flex flex-col gap-3 mt-8"></div>
+      <div id="task-list" class="flex flex-col gap-3 mt-8">
+        <input id="task-title" class=" border-border bg-white shadow-md "
+/>
+      </div>
      </main>
+     </div>
      </body>
 
 </html>
