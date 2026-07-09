@@ -58,6 +58,12 @@ function renderTasks() {
     taskList.appendChild(li);
   });
 }
+function taskForm() {
+  form.classList.toggle("hidden");
+}
+
+taskBtn.addEventListener("click", taskForm);
+
 function createTask(e) {
   e.preventDefault();
   const text = title.value;
