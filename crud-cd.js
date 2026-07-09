@@ -5,15 +5,12 @@ const title = document.querySelector("#task-title");
 const taskList = document.querySelector("#task-list");
 const emptyState = document.querySelector("#empty-state");
 const description = document.querySelector("#task-description");
-const priority = document.querySelector(".task-priority");
+const priorityButtons = document.querySelector(".task-priority");
 const taskBtn = document.querySelector("#task-btn");
 
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
-taskBtn.addEventListener("click", () => {
-  form.classList.toggle("hidden");
-});
 
 function renderTasks() {
   taskList.innerHTML = "";
@@ -73,7 +70,7 @@ function createTask(e) {
     id: Date.now(),
     title: text,
     description: description.value,
-    priority: selectedPriority,
+    priority: priority.value,
     completed: false,
   };
 
