@@ -5,7 +5,7 @@ const title = document.querySelector("#task-title");
 const taskList = document.querySelector("#task-list");
 const emptyState = document.querySelector("#empty-state");
 const description = document.querySelector("#task-description");
-const priorityButtons = document.querySelector(".task-priority");
+const priorityButtons = document.querySelectorAll(".task-priority");
 const taskBtn = document.querySelector("#task-btn");
 
 function saveTasks() {
@@ -55,6 +55,13 @@ function renderTasks() {
     taskList.appendChild(li);
   });
 }
+let priorityValue = "";
+priorityButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    priorityValue = button.dataset.priority;
+  });
+});
+
 function taskForm() {
   form.classList.toggle("hidden");
 }
@@ -70,7 +77,7 @@ function createTask(e) {
     id: Date.now(),
     title: text,
     description: description.value,
-    priority: priority.value,
+    priority: priorityValue,
     completed: false,
   };
 
