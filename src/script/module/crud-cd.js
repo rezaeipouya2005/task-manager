@@ -28,8 +28,20 @@ function renderTasks() {
     } else {
       priorityClass = "bg-[#C3FFF1] text-[#11A483]";
     }
+
+    let priorityImage = "";
+
+    if (task.priority === "high") {
+      priorityImage = "./src/assets/icon/Frame 1000005475 red.svg";
+    } else if (task.priority === "medium") {
+      priorityImage = "./src/assets/icon/Frame 1000005475 (3).svg";
+    } else {
+       priorityImage = "./src/assets/icon/Frame 1000005475.png";
+    }
+
     li.innerHTML = `
         <input type="checkbox" ${task.completed ? "checked" : ""}>
+        <img src="${priorityImage}" />
 
     <div>
         <h3>${task.title}</h3>
