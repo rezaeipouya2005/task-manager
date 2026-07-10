@@ -9,6 +9,8 @@ const priorityButtons = document.querySelectorAll(".task-priority");
 const taskBtn = document.querySelector("#task-btn");
 const priorityBox = document.querySelector("#priorityBox");
 const priorityMenu = document.querySelector("#priorityMenu");
+const priorityPicture = document.querySelector("#priorityPicture");
+const completedList = document.querySelector("#completed-list");
 
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -44,7 +46,7 @@ function renderTasks() {
 
     li.innerHTML = `
 
-  <div class="w-full max-w-[744px] min-h-[105px] h-auto bg-white border-2 border-border rounded-3 flex items-center justify-between relative mt-2.5">
+  
           <img src="${priorityImage}" alt="" class="" />
           <div class="flex items-start gap-3 flex-1  pr-2">
           <input type="checkbox" class=" w-[22px] h-[22px] mt-1 shrink-0 p-1" ${task.completed ? "checked" : ""}/>
@@ -55,10 +57,8 @@ function renderTasks() {
            </div>
            ${task.description ? `<p class="pt-2.5 bottom-6 text-neutral-7 mt-2 leading-6" >${task.description}</p>` : ""}
           </div>
-  </div>
-
-
-    <div class="absolute ">
+ 
+    <div class="absolute right-1/5">
     <button class="menu-btn flex items-start" >
       <img src="./src/asstes/icon/Frame 33317.svg" alt="frame">
     </button>
@@ -77,12 +77,35 @@ function renderTasks() {
   });
 }
 
+function completedTasks() {
+  completedList.innerHTML = "";
+
+   tasks .filter(task=> task.completed===true)
+  completedList.innerHTML +=
+   `<div class="line-through">
+          ${task.title}
+        </div>` ;
+  }
+  
+ 
+
 taskList.addEventListener("click", (e) => {
   if (e.target.type === "checkbox") {
-    const taskContent = e.target.closest("li").querySelector("div");
-    taskContent.classList.toggle("line-through", e.target.checked);
+   const li =Number(e.target.closest("li"));
+   const id = li.dataset.id;
+   tasks.forEach((task)=> {
+    if(task.id === id)
+    task.completed= e.target.checked;
+   }
   }
+ saveTasks();
+renderTasks();
+ completedTasks();
+
 });
+
+ 
+
 
 let priorityValue = "";
 priorityButtons.forEach((button) => {
@@ -108,9 +131,9 @@ const priorityText = {
 priorityBox.addEventListener("click", () => {
   priorityMenu.classList.toggle("hidden");
   if (priorityMenu.classList.toggle("hidden")) {
-     priorityBox.innerHTML= `<img src="./src/asstes/icon/tag-right@2x.png"/>`;
+     priorityPicture.innerHTML= `<img src="./src/asstes/icon/tag-right@2x.png"/>`;
      } else {
-   priorityBox.innerHTML= `<img src="/src/asstes/icon/tag-right.svg"/>` ;
+   priorityPicture.innerHTML= `<img src="/src/asstes/icon/tag-right.svg"/>` ;
   }
 });
 
@@ -154,4 +177,7 @@ function toggleMenu(button) {
 
 taskList.addEventListener("click", (e) => {
   const menuBtn = e.target.closest(".menu-btn");
+
+    toggleMenu(menuBtn);
+  
 });

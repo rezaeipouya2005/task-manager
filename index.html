@@ -602,9 +602,9 @@
           </div>
 
           <form id="task-form" class="hidden w-full">
-            <div class="w-full max-w-[744px] mx-auto pt-[74px]">
+            <div class="w-full max-w-[744px] mx-auto pt-5">
               <div
-                class="w-full max-w-[744px] md:min-h-[310px] h-auto mt-[29px] bg-background shadow-md border border-border rounded-3"
+                class="w-full max-w-[744px] md:min-h-[310px] h-auto mt-4 bg-background shadow-md border border-border rounded-3"
               >
                 <div class="p-6">
                   <p
@@ -629,6 +629,7 @@
                   <button
                     class="flex shadow-md bg-white border border-border px-3 py-1 rounded-lg relative ml-3"
                   >
+                  <img id="priorityPicture" class="w-[20px] h-[20px]" src="./src/asstes/icon/tag-right@2x.png"/>
                     <p class="text-neutral-6">تگ ها</p>
                   </button>
                   <div
@@ -659,9 +660,11 @@
                   </div>
                 </div>
                  <div class="border-t border-border p-6 flex justify-end">
+                  <img class="block md:hidden" src="./src/asstes/icon/+.svg" alt="*"/>
                 <button class="text-neutral-1 bg-primary rounded-md px-4 py-2">
                   اضافه کردن تسک
                 </button>
+                
               </div>
               </div>
 
@@ -698,6 +701,9 @@
             </p>
             <p class="text-neutral-6">3 تسک انجام شده است.</p>
           </div>
+
+          <div id="completed-list" class="flex flex-col gap-3 mt-4"></div>
+
         </main>
       </div>
     </div>
