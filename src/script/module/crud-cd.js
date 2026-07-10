@@ -7,6 +7,8 @@ const emptyState = document.querySelector("#empty-state");
 const description = document.querySelector("#task-description");
 const priorityButtons = document.querySelectorAll(".task-priority");
 const taskBtn = document.querySelector("#task-btn");
+const priorityBox = document.querySelector("#priorityBox");
+const priorityMenu = document.querySelector("#priorityMenu");
 
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -44,7 +46,8 @@ function renderTasks() {
     <div class="flex items-start gap-2 flex-1 border border-border relative justify-between p-4">
         <input type="checkbox" class="p-1" ${task.completed ? "checked" : ""}>
         <img src="${priorityImage}" class="absolute" />
-    <div class="flex flex-col">
+
+    <div class="flex flex-col gap-1">
     <div class="flex flex-row gap-2">
         <h3>${task.title}</h3>
         <span class="${priorityClass}"> ${priorityText[task.priority]}</span>
@@ -82,6 +85,14 @@ let priorityValue = "";
 priorityButtons.forEach((button) => {
   button.addEventListener("click", () => {
     priorityValue = button.dataset.priority;
+
+    priorityButtons.forEach((item) => {
+      if (item === button) {
+        item.classList.remove("hidden");
+      } else {
+        item.classList.add("hidden");
+      }
+    });
   });
 });
 
@@ -90,6 +101,8 @@ const priorityText = {
   medium: "متوسط",
   low: "پایین",
 };
+
+
 
 function taskForm() {
   form.classList.toggle("hidden");
