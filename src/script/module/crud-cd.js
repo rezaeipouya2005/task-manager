@@ -17,7 +17,8 @@ function renderTasks() {
   emptyState.classList.toggle("hidden", tasks.length > 0);
   tasks.forEach((task) => {
     const li = document.createElement("li");
-    li.className = "flex justify-between gap-3 border rounded-md p-5 shadow-md";
+    li.className =
+      "flex justify-between gap-3 border rounded-md p-5 shadow-md ";
     li.dataset.id = task.id;
 
     let priorityClass = "";
@@ -40,16 +41,18 @@ function renderTasks() {
     }
 
     li.innerHTML = `
-        <input type="checkbox" ${task.completed ? "checked" : ""}>
-        <img src="${priorityImage}" />
-
-    <div>
+    <div class="flex items-start gap-2 flex-1 border border-border relative justify-between p-4">
+        <input type="checkbox" class="p-1" ${task.completed ? "checked" : ""}>
+        <img src="${priorityImage}" class="absolute" />
+    <div class="flex flex-col">
+    <div class="flex flex-row gap-2">
         <h3>${task.title}</h3>
-      ${task.description ? `<p>${task.description}</p>` : ""}
-        <span class="${priorityClass}">${task.priority}</span>
+        <span class="${priorityClass}"> ${priorityText[task.priority]}</span>
+    </div>
+     ${task.description ? `<p>${task.description}</p>` : ""}
     </div>
 
-    <div class="relative">
+    <div class="absolute">
     <button class="menu-btn" >
       <img src="" alt="frame">
     </button>
@@ -70,7 +73,8 @@ function renderTasks() {
 
 taskList.addEventListener("click", (e) => {
   if (e.target.type === "checkbox") {
-    content.classList.toggle("line-through", e.target.checked);
+    const taskContent = e.target.closest("li").querySelector("div");
+    taskContent.classList.toggle("line-through", e.target.checked);
   }
 });
 
@@ -102,7 +106,7 @@ function createTask(e) {
     id: Date.now(),
     title: text,
     description: description.value,
-    priority: priorityText(priorityValue),
+    priority: priorityValue,
     completed: false,
   };
 
@@ -126,7 +130,3 @@ function toggleMenu(button) {
 taskList.addEventListener("click", (e) => {
   const menuBtn = e.target.closest(".menu-btn");
 });
- 
-
-
-
