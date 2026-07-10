@@ -36,7 +36,7 @@ function renderTasks() {
     } else if (task.priority === "medium") {
       priorityImage = "./src/assets/icon/Frame 1000005475 (3).svg";
     } else {
-       priorityImage = "./src/assets/icon/Frame 1000005475.png";
+      priorityImage = "./src/assets/icon/Frame 1000005475.png";
     }
 
     li.innerHTML = `
@@ -67,12 +67,25 @@ function renderTasks() {
     taskList.appendChild(li);
   });
 }
+
+taskList.addEventListener("click", (e) => {
+  if (e.target.type === "checkbox") {
+    content.classList.toggle("line-through", e.target.checked);
+  }
+});
+
 let priorityValue = "";
 priorityButtons.forEach((button) => {
   button.addEventListener("click", () => {
     priorityValue = button.dataset.priority;
   });
 });
+
+const priorityText = {
+  high: "بالا",
+  medium: "متوسط",
+  low: "پایین",
+};
 
 function taskForm() {
   form.classList.toggle("hidden");
@@ -89,7 +102,7 @@ function createTask(e) {
     id: Date.now(),
     title: text,
     description: description.value,
-    priority: priorityValue,
+    priority: priorityText(priorityValue),
     completed: false,
   };
 
@@ -112,5 +125,4 @@ function toggleMenu(button) {
 
 taskList.addEventListener("click", (e) => {
   const menuBtn = e.target.closest(".menu-btn");
-  }
-);
+});
