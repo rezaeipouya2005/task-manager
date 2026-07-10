@@ -17,7 +17,7 @@ function renderTasks() {
   emptyState.classList.toggle("hidden", tasks.length > 0);
   tasks.forEach((task) => {
     const li = document.createElement("li");
-    li.className = "flex justify-between gap-3 border rounded-md p-5";
+    li.className = "flex justify-between gap-3 border rounded-md p-5 shadow-md";
     li.dataset.id = task.id;
 
     let priorityClass = "";
@@ -88,6 +88,7 @@ function createTask(e) {
 
   title.value = "";
   description.value = "";
+  priorityValue = "";
 }
 form.addEventListener("submit", createTask);
 renderTasks();
@@ -96,3 +97,8 @@ function toggleMenu(button) {
   const menu = button.nextElementSibling;
   menu.classList.toggle("hidden");
 }
+
+taskList.addEventListener("click", (e) => {
+  const menuBtn = e.target.closest(".menu-btn");
+  }
+);
