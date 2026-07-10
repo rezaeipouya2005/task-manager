@@ -20,7 +20,7 @@ function renderTasks() {
   tasks.forEach((task) => {
     const li = document.createElement("li");
     li.className =
-      "flex justify-between gap-3 border rounded-md p-5 shadow-md ";
+      "flex w-full max-w-[744px] min-h-[105px] h-auto bg-white border-2 border-border rounded-md flex items-center justify-between relative mt-2.5";
     li.dataset.id = task.id;
 
     let priorityClass = "";
@@ -35,29 +35,32 @@ function renderTasks() {
     let priorityImage = "";
 
     if (task.priority === "high") {
-      priorityImage = "./src/assets/icon/Frame 1000005475 red.svg";
+      priorityImage = "./src/asstes/icon/Frame 1000005475 red.svg";
     } else if (task.priority === "medium") {
-      priorityImage = "./src/assets/icon/Frame 1000005475 (3).svg";
+      priorityImage = "./src/asstes/icon/Frame 1000005475 (3).svg";
     } else {
-      priorityImage = "./src/assets/icon/Frame 1000005475.png";
+      priorityImage = "./src/asstes/icon/Frame 1000005475 green.svg";
     }
 
     li.innerHTML = `
-    <div class="flex items-start gap-2 flex-1 border border-border relative justify-between p-4">
-        <input type="checkbox" class="p-1" ${task.completed ? "checked" : ""}>
-        <img src="${priorityImage}" class="absolute" />
 
-    <div class="flex flex-col gap-1">
-    <div class="flex flex-row gap-2">
-        <h3>${task.title}</h3>
-        <span class="${priorityClass}"> ${priorityText[task.priority]}</span>
-    </div>
-     ${task.description ? `<p>${task.description}</p>` : ""}
-    </div>
+  <div class="w-full max-w-[744px] min-h-[105px] h-auto bg-white border-2 border-border rounded-3 flex items-center justify-between relative mt-2.5">
+          <img src="${priorityImage}" alt="" class="" />
+          <div class="flex items-start gap-3 flex-1  pr-2">
+          <input type="checkbox" class=" w-[22px] h-[22px] mt-1 shrink-0 p-1" ${task.completed ? "checked" : ""}/>
+           <div class="flex-1  px-3 min-w-0">
+          <div class="flex flex-col md:flex-row md:items-center gap-2">
+          <h3 class="  font-semibold text-base leading-7 "> ${task.title} </h3>
+          <span class="w-[54px] h-6  rounded-lg text-high  ${priorityClass}"> ${priorityText[task.priority]}</span>
+           </div>
+           ${task.description ? `<p class="pt-2.5 bottom-6 text-neutral-7 mt-2 leading-6" >${task.description}</p>` : ""}
+          </div>
+  </div>
 
-    <div class="absolute">
-    <button class="menu-btn" >
-      <img src="" alt="frame">
+
+    <div class="absolute ">
+    <button class="menu-btn flex items-start" >
+      <img src="./src/asstes/icon/Frame 33317.svg" alt="frame">
     </button>
 
     <div class="menu hidden absolute right-0 bg-white border rounded shadow">
@@ -102,6 +105,14 @@ const priorityText = {
   low: "پایین",
 };
 
+priorityBox.addEventListener("click", () => {
+  priorityMenu.classList.toggle("hidden");
+  if (priorityMenu.classList.toggle("hidden")) {
+     priorityBox.innerHTML= `<img src="./src/asstes/icon/tag-right@2x.png"/>`;
+     } else {
+   priorityBox.innerHTML= `<img src="/src/asstes/icon/tag-right.svg"/>` ;
+  }
+});
 
 
 function taskForm() {
@@ -127,6 +138,7 @@ function createTask(e) {
 
   saveTasks();
   renderTasks();
+  form.classList.add("hidden");
 
   title.value = "";
   description.value = "";
