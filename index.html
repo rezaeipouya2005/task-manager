@@ -23,7 +23,7 @@
     <div class="flex min-h-screen">
       <aside
         id="sidebar"
-        class="fixed top-0 right-0 h-screen w-[280px] bg-surface-primary flex flex-col z-40 translate-x-full md:translate-x-0 transition-transform duration-300 border-l border-neutral-8 shadow-lg bg-white rounded-xl bottom-0 overflow-y-auto"
+        class="fixed top-0 right-0 h-screen w-[280px] bg-surface-primary flex flex-col z-40 translate-x-full md:translate-x-0 transition-transform duration-300 border-l border-border shadow-lg bg-white rounded-xl bottom-0 overflow-y-auto"
       >
         <!-- هدر sidebar موبایل -->
         <div class="md:hidden flex items-center justify-between px-4 py-3">
@@ -521,54 +521,58 @@
           </div>
         </div>
       </aside>
-      <header
-        class="md:hidden flex items-center justify-between px-4 py-3 mx-4 mt-4 bg-surface rounded-2xl border border-neutral-4 shadow-sm"
-      >
-        <button id="menu-btn" class="p-1">
-          <svg
-            class="w-6 h-6 text-nav-text"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3 7H21"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-            <path
-              d="M3 12H21"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-            <path
-              d="M3 17H21"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-          </svg>
-        </button>
-        <h1 class="font-bold text-lg text-text-primary">کوئرا لیست</h1>
-        <div class="w-8"></div>
-      </header>
 
-      <div class="flex-1 px-4 md:px-8 py-6">
-        <div class="md:hidden flex items-center justify-start gap-3 mb-8 mt-4">
-          <img
-            src="./src/assets/image/Ellipse 136.svg"
-            alt="profile"
-            class="w-16 h-16 rounded-full object-cover border border-neutral-4"
-          />
-          <div class="text-right">
-            <h2 class="font-bold text-2xl text-text-primary">سلام، رویا</h2>
-            <p class="text-sm text-text-secondary mt-1">
-              امروز، سه‌شنبه ۵ بهمن ۱۴۰۲
-            </p>
+      <div class="flex-1">
+        <header
+          class="md:hidden flex items-center justify-between px-4 py-3 mx-4 mt-4 bg-surface rounded-2xl border border-neutral-4 shadow-sm"
+        >
+          <button id="menu-btn" class="p-1">
+            <svg
+              class="w-6 h-6 text-nav-text"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 7H21"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M3 12H21"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M3 17H21"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+          <h1 class="font-bold text-lg text-text-primary">کوئرا لیست</h1>
+          <div class="w-8"></div>
+        </header>
+        <div class="flex-1 px-4 md:px-8 py-6">
+          <div
+            class="md:hidden flex items-center justify-start gap-3 mb-8 mt-4"
+          >
+            <img
+              src="./src/assets/image/Ellipse 136.svg"
+              alt="profile"
+              class="w-16 h-16 rounded-full object-cover border border-neutral-4"
+            />
+            <div class="text-right">
+              <h2 class="font-bold text-2xl text-text-primary">سلام، رویا</h2>
+              <p class="text-sm text-text-secondary mt-1">
+                امروز، سه‌شنبه ۵ بهمن ۱۴۰۲
+              </p>
+            </div>
           </div>
         </div>
 
