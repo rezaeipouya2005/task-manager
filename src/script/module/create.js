@@ -23,7 +23,7 @@ export function createTask(e) {
     completed: false,
   };
 
-  setTasks = [...tasks, newTask];
+  setTasks([...tasks, newTask]);
 
   saveTasks();
   renderTasks();

@@ -7,7 +7,7 @@ export function renderTasks() {
 
   emptyState.classList.toggle("hidden", tasks.length > 0);
   const activeTasks = tasks.filter((task) => !task.completed);
-  emptyState.classList.toggle("hidden", activeTasks.length>0);
+  emptyState.classList.toggle("hidden", activeTasks.length > 0);
 
   tasks
     .filter((task) => !task.completed)
