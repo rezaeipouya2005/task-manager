@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/css/output.css" />
     <link rel="stylesheet" href="./src/css/input.css" />
+
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
 
     <title>quera</title>
   </head>
-  <body class="font-sans relative bg-background overflow-hidden">
+  <body class="font-sans relative bg-background overflow-x-hidden">
     <div
       id="overlay"
       class="hidden fixed inset-0 bg-black/40 z-30 md:hidden"
@@ -22,7 +23,7 @@
     <div class="flex min-h-screen">
       <aside
         id="sidebar"
-        class="fixed top-0 right-0 h-screen w-[280px] bg-surface-primary flex flex-col z-40 translate-x-full md:translate-x-0 transition-transform duration-300 border-l border-neutral-8 shadow-lg bg-white rounded-xl bottom-0 overflow-y-auto"
+        class="fixed top-0 right-0 h-screen w-[280px] bg-surface-primary flex flex-col z-40 translate-x-full md:translate-x-0 transition-transform duration-300 border-l border-border shadow-lg bg-white rounded-xl bottom-0 overflow-y-auto"
       >
         <!-- هدر sidebar موبایل -->
         <div class="md:hidden flex items-center justify-between px-4 py-3">
@@ -60,7 +61,7 @@
         <!-- پروفایل دسکتاپ -->
         <div class="hidden md:flex items-center justify-start gap-3 px-4 py-5">
           <img
-            src="./src/assets/image/Ellipse 136.png"
+            src="./src/assets/image/Ellipse 136.svg"
             alt="profile"
             class="w-12 h-12 rounded-full object-cover"
           />
@@ -520,58 +521,62 @@
           </div>
         </div>
       </aside>
-      <header
-        class="md:hidden flex items-center justify-between px-4 py-3 mx-4 mt-4 bg-surface rounded-2xl border border-neutral-4 shadow-sm"
-      >
-        <button id="menu-btn" class="p-1">
-          <svg
-            class="w-6 h-6 text-nav-text"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3 7H21"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-            <path
-              d="M3 12H21"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-            <path
-              d="M3 17H21"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-            />
-          </svg>
-        </button>
-        <h1 class="font-bold text-lg text-text-primary">کوئرا لیست</h1>
-        <div class="w-8"></div>
-      </header>
 
-      <div class="px-4 md:px-8 py-6 max-w-3xl md:max-w-none">
-        <div class="md:hidden flex items-center justify-start gap-3 mb-8 mt-4">
-          <img
-            src="./src/assets/image/Ellipse 136.png"
-            alt="profile"
-            class="w-16 h-16 rounded-full object-cover border border-neutral-4"
-          />
-          <div class="text-right">
-            <h2 class="font-bold text-2xl text-text-primary">سلام، رویا</h2>
-            <p class="text-sm text-text-secondary mt-1">
-              امروز، سه‌شنبه ۵ بهمن ۱۴۰۲
-            </p>
+      <div class="flex-1">
+        <header
+          class="md:hidden flex items-center justify-between px-4 py-3 mx-4 mt-4 bg-surface rounded-2xl border border-neutral-4 shadow-sm"
+        >
+          <button id="menu-btn" class="p-1">
+            <svg
+              class="w-6 h-6 text-nav-text"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 7H21"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M3 12H21"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M3 17H21"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+          <h1 class="font-bold text-lg text-text-primary">کوئرا لیست</h1>
+          <div class="w-8"></div>
+        </header>
+        <div class="flex-1 px-4 md:px-8 py-6">
+          <div
+            class="md:hidden flex items-center justify-start gap-3 mb-8 mt-4"
+          >
+            <img
+              src="./src/assets/image/Ellipse 136.svg"
+              alt="profile"
+              class="w-16 h-16 rounded-full object-cover border border-neutral-4"
+            />
+            <div class="text-right">
+              <h2 class="font-bold text-2xl text-text-primary">سلام، رویا</h2>
+              <p class="text-sm text-text-secondary mt-1">
+                امروز، سه‌شنبه ۵ بهمن ۱۴۰۲
+              </p>
+            </div>
           </div>
         </div>
 
-        <main class="w-full px-4 md:px-8 py-6 pt-8 md:pt-16">
+        <main class="max-w-[744px] w-full mx-auto px-4 md:px-0 pt-8 md:pt-16">
           <div>
             <h1
               class="text-text-primary font-semibold text-base md:text-[20px]"
@@ -579,16 +584,19 @@
               تسک‌های امروز
             </h1>
 
-            <p class="text-text-secondary hidden md:block">3 تسک را باید انجام دهید.</p>
-            <p class="text-text-secondary block md:hidden">تسکی برای امروز نداری!</p>
-
+            <p class="text-text-secondary hidden md:block">
+              3 تسک را باید انجام دهید.
+            </p>
+            <p class="text-text-secondary block md:hidden">
+              تسکی برای امروز نداری!
+            </p>
           </div>
 
           <div
             class="w-full max-w-[744px] min-h-[57px] h-auto border-2 border-border-dashed border-dashed rounded-[10px] flex items-center px-3 md:px-4 text-primary mt-[21px]"
           >
             <button class="font-bold text-base w-6 h-6">
-              <img src="./src/assets/icon/add.svg" alt="" />
+              <img src="./src/asstes/icon/add.svg" alt="" />
             </button>
             <button
               id="task-btn"
@@ -599,71 +607,75 @@
           </div>
 
           <form id="task-form" class="hidden w-full">
-            <div
-              class="w-full max-w-[744px] min-h-[105px] h-auto bg-white border-2 border-border rounded-md flex items-start justify-between relative mt-2.5"
-            >
-              <img
-                src="./src/asstes/icon/Frame 1000005475 red.svg"
-                alt=""
-                class=""
-              />
+            <div class="w-full max-w-[744px] mx-auto pt-5">
+              <div
+                class="w-full max-w-[744px] md:min-h-[310px] h-auto mt-4 bg-background shadow-md border border-border rounded-3"
+              >
+                <div class="flex flex-col items-start p-6 gap-2">
+                  <input
+                    id="task-title"
+                    placeholder="نام تسک"
+                    type="text"
+                    class="text-text-secondary font-semibold focus:outline-none"
+                  />
 
-              <div class="flex items-start gap-3 flex-1 pr-2">
-                <input class="w-[22px] h-[22px] mt-1 shrink-0" />
+                  <textarea
+                    id="task-description"
+                    placeholder="توضیحات"
+                    class="text-neutral-6 resize-none outline-none focus:outline-none focus:border-0 focus:ring-0 border-none bg-transparent"
+                  ></textarea>
+                </div>
 
-                <div class="flex flex-col px-3 min-w-0 ">
-                  <div
-                    class="flex flex-col md:flex-row md:items-center gap-2 shrink-0"
+                <div id="priorityBox" class="relative px-4 py-6">
+                  <button
+                    id="priorityButton"
+                    class="flex shadow-md bg-white border border-border px-3 py-1 rounded-lg relative ml-3 shadow-[0_4px_4px_-0px_rgba(0,0,0,0.15)]"
                   >
-                    <input
-                      id="task-title"
-                      placeholder="نام تسک"
-                      type="text"
-                      class="right-[58px] font-semibold text-base leading-7 border-none"
+                    <img
+                      id="priorityPicture"
+                      class="w-[20px] h-[20px]"
+                      src="./src/asstes/icon/tag-right@2x.png"
                     />
-                  </div>
-                  <div class="flex items-start justify-between gap-4 mt-2">
-                    <textarea
-                      id="task-description"
-                      placeholder="توضیحات"
-                      class="flex-1 pt-2.5 bottom-6 text-neutral-7 mt-2 leading-6 border-none"
-                    ></textarea>
-                    <div
-                      class="flex flex-row gap-2 shadow-md border border-border bg-white p-2 rounded-md"
-                    >
-                      <button
-                        type="button"
-                        class="task-priority w-[54px] h-6 bg-high-bg rounded-lg text-high right-[329px]"
-                        data-priority="high"
-                      >
-                        بالا
-                      </button>
-                      <button
-                        type="button"
-                        class="task-priority w-[54px] h-6 bg-medium-bg rounded-lg text-medium right-[329px]"
-                        data-priority="medium"
-                      >
-                        متوسط
-                      </button>
-                      <button
-                        type="button"
-                        class="task-priority w-[54px] h-6 bg-low-bg rounded-lg text-low right-[329px]"
-                        data-priority="low"
-                      >
-                        پایین
-                      </button>
-                    </div>
-                  </div>
-
-                  <div class="border-t border-border p-6 flex justify-end">
+                    <p id="priorityText" class="text-neutral-6">تگ ها</p>
+                  </button>
+                  <div
+                    id="priorityMenu"
+                    class="flex flex-row gap-2 shadow-md border border-border bg-white p-2 rounded-md absolute hidden"
+                  >
                     <button
-                      id="btn"
-                      type="submit"
-                      class="text-neutral-1 bg-primary rounded-md px-4 py-2"
+                      type="button"
+                      class="task-priority w-[54px] h-6 bg-high-bg rounded-lg text-high right-[329px]"
+                      data-priority="high"
                     >
-                      اضافه کردن تسک
+                      بالا
+                    </button>
+                    <button
+                      type="button"
+                      class="task-priority w-[54px] h-6 bg-medium-bg rounded-lg text-medium right-[329px]"
+                      data-priority="medium"
+                    >
+                      متوسط
+                    </button>
+                    <button
+                      type="button"
+                      class="task-priority w-[54px] h-6 bg-low-bg rounded-lg text-low right-[329px]"
+                      data-priority="low"
+                    >
+                      پایین
                     </button>
                   </div>
+                </div>
+                <div class="border-t border-border p-6 flex justify-end">
+                  <img
+                    class="block md:hidden"
+                    src="./src/asstes/icon/+.svg"
+                    alt="*"
+                  />
+                  <button
+                    class="text-neutral-1 bg-primary rounded-md px-4 py-2"
+                  >
+                    اضافه کردن تسک
+                  </button>
                 </div>
               </div>
             </div>
@@ -696,11 +708,16 @@
             >
               تسک‌های انجام شده
             </p>
-            <p class="text-neutral-6 ">3 تسک انجام شده است.</p>
+            <p class="text-neutral-6">3 تسک انجام شده است.</p>
           </div>
+
+          <div
+            id="completed-list"
+            class="flex flex-col gap-3 mt-4 mb-8 md:mb-4"
+          ></div>
         </main>
       </div>
     </div>
   </body>
-  <script src="./src/script/module/crud-cd.js"></script>
+  <script type="module" src="./src/script/index.js"></script>
 </html>

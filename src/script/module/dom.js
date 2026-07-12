@@ -1,0 +1,12 @@
+export const form = document.querySelector("#task-form");
+export const title = document.querySelector("#task-title");
+export const taskList = document.querySelector("#task-list");
+export const emptyState = document.querySelector("#empty-state");
+export const description = document.querySelector("#task-description");
+export const priorityButtons = document.querySelectorAll(".task-priority");
+export const taskBtn = document.querySelector("#task-btn");
+export const priorityBox = document.querySelector("#priorityBox");
+export const priorityMenu = document.querySelector("#priorityMenu");
+export const priorityPicture = document.querySelector("#priorityPicture");
+export const completedList = document.querySelector("#completed-list");
+export const priorityButton = priorityBox.querySelector("button");
