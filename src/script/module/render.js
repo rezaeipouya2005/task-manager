@@ -118,8 +118,8 @@ export function completedTasks() {
 
       completedList.innerHTML += `
        <div
-          class="w-full max-w-[744px] md:h-[74px] h-auto bg-white border-2 border-border rounded-3 flex items-center 
-          justify-between relative gap-4  ">
+          class="w-full max-w-[744px] md:h-[74px] h-auto bg-white border-2 border-border rounded-lg flex items-center 
+          justify-between relative gap-4 ">
           
        
           <img src="${priorityImage}" alt="" class="" />
