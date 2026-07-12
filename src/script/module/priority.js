@@ -17,6 +17,8 @@ export const priorityText = {
 export function initPriority() {
   priorityButtons.forEach((button) => {
     button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
       priorityValue = button.dataset.priority;
 
       priorityButton.textContent = button.textContent;
@@ -32,13 +34,14 @@ export function initPriority() {
       });
     });
   });
+});
 
   priorityBox.addEventListener("click", () => {
     priorityMenu.classList.toggle("hidden");
     if (priorityMenu.classList.contains("hidden")) {
-      priorityPicture.src = `./src/asstes/icon/tag-right@2x.png"`;
+      priorityPicture.src = `./src/asstes/icon/tag-right@2x.png`;
     } else {
-      priorityPicture.src = `./src/asstes/icon/tag-right.svg"`;
+      priorityPicture.src = `./src/asstes/icon/tag-right.svg`;
     }
   });
 }
