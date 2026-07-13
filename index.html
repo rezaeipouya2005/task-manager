@@ -23,7 +23,7 @@
     <div class="flex min-h-screen">
       <aside
         id="sidebar"
-        class="fixed top-0 right-0 h-screen w-[280px] bg-surface-primary flex flex-col z-40 translate-x-full md:translate-x-0 transition-transform duration-300 border-l border-border shadow-lg bg-white rounded-xl bottom-0 overflow-y-auto"
+        class="fixed top-0 right-0 h-screen w-[280px] bg-surface-primary flex flex-col z-40 translate-x-full md:translate-x-0 transition-transform duration-300 border-l border-border shadow-lg rounded-xl bottom-0 overflow-y-auto"
       >
         <!-- هدر sidebar موبایل -->
         <div class="md:hidden flex items-center justify-between px-4 py-3">
@@ -584,7 +584,7 @@
               تسک‌های امروز
             </h1>
 
-            <p class="text-text-secondary hidden md:block">
+            <p id="today-count" class="text-text-secondary hidden md:block">
               3 تسک را باید انجام دهید.
             </p>
             <p class="text-text-secondary block md:hidden">
@@ -629,50 +629,82 @@
                 <div id="priorityBox" class="relative px-4 py-6">
                   <button
                     id="priorityButton"
-                    class="flex shadow-md bg-white border border-border px-3 py-1 rounded-lg relative ml-3 shadow-[0_4px_4px_-0px_rgba(0,0,0,0.15)]"
+                    type="button"
+                    class="flex shadow-md bg-surface border border-border px-3 py-1 rounded-lg relative ml-3 shadow-[0_4px_4px_-0px_rgba(0,0,0,0.15)]"
                   >
-                    <img
+                    <svg
                       id="priorityPicture"
-                      class="w-[20px] h-[20px]"
-                      src="./src/asstes/icon/tag-right@2x.png"
-                    />
+                      class="w-[20px] h-[20px] text-neutral-6 transition-transform -rotate-90"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.9336 2.81334V10.44C13.9336 10.8933 13.6203 11.46 13.2336 11.7L8.78026 14.4867C8.34693 14.7533 7.66693 14.7267 7.26026 14.42L2.66026 10.9667C2.33359 10.72 2.06693 10.1867 2.06693 9.78001V2.81334C2.06693 1.64667 3.34693 0.940036 4.34026 1.55337L7.29359 3.40001C7.68693 3.64667 8.32693 3.64667 8.72026 3.40001L11.6736 1.55337C12.6536 0.940036 13.9336 1.65334 13.9336 2.81334Z"
+                        fill="currentColor"
+                        stroke="currentColor"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
                     <p id="priorityText" class="text-neutral-6">تگ ها</p>
                   </button>
                   <div
                     id="priorityMenu"
-                    class="flex flex-row gap-2 shadow-md border border-border bg-white p-2 rounded-md absolute hidden"
+                    class="flex flex-row items-center shadow-md border border-border bg-surface p-2 rounded-2xl absolute hidden divide-x divide-x-reverse divide-border gap-1"
                   >
                     <button
                       type="button"
-                      class="task-priority w-[54px] h-6 bg-high-bg rounded-lg text-high right-[329px]"
+                      class="task-priority w-[70px] h-9 bg-high-bg text-high rounded-lg"
                       data-priority="high"
                     >
                       بالا
                     </button>
                     <button
                       type="button"
-                      class="task-priority w-[54px] h-6 bg-medium-bg rounded-lg text-medium right-[329px]"
+                      class="task-priority w-[70px] h-9 bg-medium-bg text-medium rounded-lg"
                       data-priority="medium"
                     >
                       متوسط
                     </button>
                     <button
                       type="button"
-                      class="task-priority w-[54px] h-6 bg-low-bg rounded-lg text-low right-[329px]"
+                      class="task-priority w-[70px] h-9 bg-low-bg text-low rounded-lg"
                       data-priority="low"
                     >
                       پایین
                     </button>
                   </div>
                 </div>
-                <div class="border-t border-border p-6 flex justify-end">
-                  <img
-                    class="block md:hidden"
-                    src="./src/asstes/icon/+.svg"
-                    alt="*"
-                  />
+                <div class="border-t border-border p-6 flex justify-end gap-2">
                   <button
-                    class="text-neutral-1 bg-primary rounded-md px-4 py-2"
+                    id="close-form-btn"
+                    type="button"
+                    class="block md:hidden border border-border rounded-xl w-11 h-11 flex items-center justify-center bg-theme-btn-inactive"
+                  >
+                    <svg
+                      class="w-3 h-3 text-text-primary"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 13 13"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.75 0.75L6.25 6.25M6.25 6.25L11.75 11.75M6.25 6.25L11.75 0.75M6.25 6.25L0.75 11.75"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    class="text-on-primary bg-add-task-bg rounded-md px-4 py-2"
                   >
                     اضافه کردن تسک
                   </button>
@@ -708,7 +740,9 @@
             >
               تسک‌های انجام شده
             </p>
-            <p class="text-neutral-6">3 تسک انجام شده است.</p>
+            <p id="completed-count" class="text-neutral-6">
+              3 تسک انجام شده است.
+            </p>
           </div>
 
           <div
