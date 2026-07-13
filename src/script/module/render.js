@@ -38,16 +38,16 @@ export function renderTasks() {
       }
 
       li.className =
-        "w-full max-w-[744px] min-h-[105px] h-auto bg-surface border-2 border-border rounded-3 flex items-center justify-between relative mt-2.5";
+        "w-full max-w-[744px] min-h-[105px] h-auto bg-surface border-2 border-border rounded-xl flex items-center justify-between relative mt-2.5";
 
       li.innerHTML = `
         <img src="${priorityImage}" alt="" class="absolute right-0 top-0 h-full"/>
 
-        <div class="flex items-start gap-3 flex-1 pr-2">
+        <div class="flex items-start  flex-1 pr-2 ">
 
           <input
             type="checkbox"
-            class="w-[22px] h-[22px] mt-1 shrink-0"
+            class="w-[22px] h-[22px] mt-1 shrink-0 appearance-none rounded border border-white border-2 m-4"
             ${task.completed ? "checked" : ""}
           />
 
@@ -59,10 +59,10 @@ export function renderTasks() {
   ${task.title}
 </p>
 
-              <button
-                class="w-[54px] h-6 flex items-center justify-center rounded-lg ${priorityClass}">
+              <p
+                class="w-[54px] h-6 flex items-center justify-center rounded-lg text-text-secondary ${priorityClass}">
                 ${priorityText[task.priority]}
-              </button>
+              </p>
 
             </div>
 
@@ -79,16 +79,16 @@ export function renderTasks() {
 
         </div>
 
-        <div class="flex items-center">
+        <div class="flex items-center ">
 
           <button class="menu-btn">
             <img
               src="./src/asstes/icon/Frame 33317.svg"
-              class="px-3 md:px-6"
+              class="px-3 md:px-6 top-2 right-2 "
             />
           </button>
 
-          <div class="menu hidden absolute left-5 top-14 bg-white border rounded-lg shadow-md p-2 z-50">
+          <div class="menu hidden absolute left-5 top-14 bg-white border rounded-3 shadow-md p-2 z-50">
 
             <button class="edit-btn flex items-center gap-2 px-3 py-2 hover:bg-gray-100 w-full">
               ویرایش
@@ -130,7 +130,7 @@ export function completedTasks() {
       completedList.innerHTML += `
    <div
       data-id="${task.id}"
-      class="w-full max-w-[744px] md:h-[74px] h-auto bg-surface border-2 border-border rounded-3 flex items-center 
+      class="w-full max-w-[744px] md:h-[74px] h-auto bg-surface border-2 border-border rounded-xl flex items-center 
       justify-between relative gap-4  ">
           
        
