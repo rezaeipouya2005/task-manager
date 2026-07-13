@@ -1,5 +1,11 @@
 import { tasks } from "./state.js";
-import { taskList, completedList, emptyState } from "./dom.js";
+import {
+  taskList,
+  completedList,
+  emptyState,
+  todayCount,
+  completedCount,
+} from "./dom.js";
 import { priorityText } from "./priority.js";
 
 export function renderTasks() {
@@ -7,6 +13,7 @@ export function renderTasks() {
 
   emptyState.classList.toggle("hidden", tasks.length > 0);
   const activeTasks = tasks.filter((task) => !task.completed);
+  todayCount.textContent = `${activeTasks.length} تسک را باید انجام دهید.`;
   emptyState.classList.toggle("hidden", activeTasks.length > 0);
 
   tasks
@@ -31,7 +38,7 @@ export function renderTasks() {
       }
 
       li.className =
-        "w-full max-w-[744px] min-h-[105px] h-auto bg-white border-2 border-border rounded-3 flex items-center justify-between relative mt-2.5";
+        "w-full max-w-[744px] min-h-[105px] h-auto bg-surface border-2 border-border rounded-3 flex items-center justify-between relative mt-2.5";
 
       li.innerHTML = `
         <img src="${priorityImage}" alt="" class="absolute right-0 top-0 h-full"/>
@@ -48,9 +55,9 @@ export function renderTasks() {
 
             <div class="flex flex-col md:flex-row md:items-center gap-2">
 
-              <p class="font-semibold text-base leading-7">
-                ${task.title}
-              </p>
+              <p class="font-semibold text-base leading-7 text-text-primary">
+  ${task.title}
+</p>
 
               <button
                 class="w-[54px] h-6 flex items-center justify-center rounded-lg ${priorityClass}">
@@ -101,6 +108,10 @@ export function renderTasks() {
 }
 
 export function completedTasks() {
+  const completedCountNum = tasks.filter(
+    (task) => task.completed === true,
+  ).length;
+  completedCount.textContent = `${completedCountNum} تسک انجام شده است.`;
   completedList.innerHTML = "";
 
   tasks
@@ -117,30 +128,40 @@ export function completedTasks() {
       }
 
       completedList.innerHTML += `
-       <div
-          class="w-full max-w-[744px] md:h-[74px] h-auto bg-white border-2 border-border rounded-lg flex items-center 
-          justify-between relative gap-4 ">
+   <div
+      data-id="${task.id}"
+      class="w-full max-w-[744px] md:h-[74px] h-auto bg-surface border-2 border-border rounded-3 flex items-center 
+      justify-between relative gap-4  ">
           
        
           <img src="${priorityImage}" alt="" class="" />
 
             <div class="flex items-center gap-3 flex-1 min-w-0">
           <input type="checkbox" checked  class=" right-[11px] w-[22px] h-[22px] "  />
-          <p class=" right-[58px] font-semibold text-base md:text-lg line-through">
-              ${task.title}
-          </p>
+          <p class=" right-[58px] font-semibold text-base md:text-lg line-through text-text-primary">
+    ${task.title}
+</p>
           </div>
 
           <!-- سه نقطه -->
-          <div class="flex items-center gap-3">
-            <img
-              src="./src/asstes/icon/Frame 33317.svg"
-              alt=""
-              class="px-3 md:px-6 shrink-0"
-            /> 
+<div class="flex items-center gap-3 relative">
+  <button class="menu-btn">
+    <img
+      src="./src/asstes/icon/Frame 33317.svg"
+      alt=""
+      class="px-3 md:px-6 shrink-0"
+    />
+  </button>
 
-            
-          </div>
+  <div class="menu hidden absolute left-5 top-10 bg-surface border border-border rounded-lg shadow-md p-2 z-50">
+    <button type="button" class="edit-btn flex items-center gap-2 px-3 py-2 hover:bg-nav-hover-bg w-full text-text-primary">
+      ویرایش
+    </button>
+    <button type="button" class="delete-btn flex items-center gap-2 px-3 py-2 hover:bg-nav-hover-bg w-full text-error">
+      حذف
+    </button>
+  </div>
+</div>
         </div>
         
         `;

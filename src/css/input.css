@@ -10,6 +10,8 @@
     --theme-btn-active: #e2e8f0;
     --theme-btn-inactive: #f1f5f9;
 
+    --add-task-bg: #007bff;
+
     /* Background & Surface */
     --background: #ffffff;
     --on-background: #191c1e;
@@ -61,6 +63,12 @@
     --nav-hover-bg: #041933;
     --theme-btn-active: #002247;
     --theme-btn-inactive: #0c1b31;
+
+    --add-task-bg: #002247;
+
+    --high-bg: #3a1410;
+    --medium-bg: #3a2a0a;
+    --low-bg: #0a2e22;
 
     /* Background & Surface */
     --background: #040810;
@@ -118,6 +126,8 @@
   --color-nav-hover-bg: var(--nav-hover-bg);
   --color-theme-btn-active: var(--theme-btn-active);
   --color-theme-btn-inactive: var(--theme-btn-inactive);
+
+  --color-add-task-bg: var(--add-task-bg);
 
   --color-background: var(--background);
   --color-on-background: var(--on-background);

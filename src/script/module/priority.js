@@ -6,6 +6,14 @@ import {
   priorityButton,
 } from "./dom.js";
 
+const defaultPriorityText = priorityButton.textContent;
+const defaultPriorityClass = priorityButton.className;
+
+export function resetPriorityButton() {
+  priorityButton.textContent = defaultPriorityText;
+  priorityButton.className = defaultPriorityClass;
+}
+
 export let priorityValue = "";
 
 export const priorityText = {
@@ -16,7 +24,6 @@ export const priorityText = {
 
 export function initPriority() {
   priorityButtons.forEach((button) => {
-    button.addEventListener("click", () => {
     button.addEventListener("click", (event) => {
       event.stopPropagation();
       priorityValue = button.dataset.priority;
@@ -24,24 +31,15 @@ export function initPriority() {
       priorityButton.textContent = button.textContent;
       priorityButton.className = button.className;
       priorityMenu.classList.add("hidden");
-
-      priorityButtons.forEach((item) => {
-        if (item === button) {
-          item.classList.remove("hidden");
-        } else {
-          item.classList.add("hidden");
-        }
-      });
     });
   });
-});
 
   priorityBox.addEventListener("click", () => {
-    priorityMenu.classList.toggle("hidden");
-    if (priorityMenu.classList.contains("hidden")) {
-      priorityPicture.src = `./src/asstes/icon/tag-right@2x.png`;
-    } else {
-      priorityPicture.src = `./src/asstes/icon/tag-right.svg`;
-    }
-  });
+  priorityMenu.classList.toggle("hidden");
+  priorityPicture.classList.toggle("-rotate-90");
+});
+}
+
+export function setPriorityValue(value) {
+  priorityValue = value;
 }
