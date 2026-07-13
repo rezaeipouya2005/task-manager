@@ -34,11 +34,14 @@ export function initPriority() {
     });
   });
 
-  priorityBox.addEventListener("click", () => {
-  priorityMenu.classList.toggle("hidden");
-  priorityPicture.classList.toggle("-rotate-90");
-});
-
+  priorityBox.addEventListener("click", (e) => {
+    priorityMenu.classList.toggle("hidden");
+    priorityPicture.classList.toggle("-rotate-90");
+    e.stopPropagation();
+  });
+  document.addEventListener("click", () => {
+    priorityMenu.classList.add("hidden");
+  });
 }
 
 export function setPriorityValue(value) {
