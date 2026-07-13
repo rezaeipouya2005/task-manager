@@ -88,7 +88,7 @@ export function renderTasks() {
             />
           </button>
 
-          <div class="menu hidden absolute left-5 top-14 bg-surface flex flex-row-reverseborder border border-border rounded-lg shadow-md p-2 z-50">
+          <div class="menu hidden absolute left-5 top-5 bg-surface flex flex-row-reverseborder border border-border rounded-lg shadow-md p-2 z-50">
 
             <button class="edit-btn flex items-center gap-2 px-3 py-2 hover:bg-gray-100 w-full">
             
@@ -161,7 +161,7 @@ export function completedTasks() {
     />
   </button>
 
-  <div class="menu hidden absolute left-5 top-10 bg-surface flex flex-row-reverse border border-border rounded-lg shadow-md p-2 z-50">
+  <div class="menu hidden absolute left-5 top-5 bg-surface flex flex-row-reverse border border-border rounded-lg shadow-md p-2 z-50">
     <button type="button" class="edit-btn flex items-center gap-2 px-3 py-2 hover:bg-nav-hover-bg w-full text-text-primary">
       
     <svg class="text-nav-text " width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

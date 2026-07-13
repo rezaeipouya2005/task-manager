@@ -605,7 +605,7 @@
           <form id="task-form" class="hidden w-full">
             <div class="w-full max-w-[744px] mx-auto pt-5">
               <div
-                class="w-full max-w-[744px] md:min-h-[310px] h-auto mt-4 bg-background shadow-md border border-border rounded-3"
+                class="w-full max-w-[744px] md:min-h-[310px] h-auto mt-4 bg-background shadow-md border border-border rounded-3 gap-2"
               >
                 <div class="flex flex-col items-start p-6 gap-2">
                   <input
@@ -618,66 +618,69 @@
                   <textarea
                     id="task-description"
                     placeholder="توضیحات"
-                    class="text-neutral-6 resize-none outline-none focus:outline-none focus:border-0 focus:ring-0 border-none bg-transparent"
+                    class="text-neutral-6 resize-none outline-none focus:outline-none focus:border-0 focus:ring-0 border-none bg-transparent h-8"
                   ></textarea>
-                </div>
 
-                <div id="priorityBox" class="relative px-4 py-6">
-                  <button
-                    id="priorityButton"
-                    type="button"
-                    class="flex shadow-md bg-surface border border-border px-3 py-1 rounded-lg relative ml-3 shadow-[0_4px_4px_-0px_rgba(0,0,0,0.15)]"
-                  >
-                    <svg
-                      id="priorityPicture"
-                      class="w-[20px] h-[20px] text-neutral-6 transition-transform -rotate-90"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.9336 2.81334V10.44C13.9336 10.8933 13.6203 11.46 13.2336 11.7L8.78026 14.4867C8.34693 14.7533 7.66693 14.7267 7.26026 14.42L2.66026 10.9667C2.33359 10.72 2.06693 10.1867 2.06693 9.78001V2.81334C2.06693 1.64667 3.34693 0.940036 4.34026 1.55337L7.29359 3.40001C7.68693 3.64667 8.32693 3.64667 8.72026 3.40001L11.6736 1.55337C12.6536 0.940036 13.9336 1.65334 13.9336 2.81334Z"
-                        fill="currentColor"
-                        stroke="currentColor"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <p id="priorityText" class="text-neutral-6">تگ ها</p>
-                  </button>
-                  <div
-                    id="priorityMenu"
-                    class="flex flex-row items-center shadow-md border border-border bg-surface p-2 rounded-2xl absolute hidden divide-x divide-x-reverse divide-border gap-3"
-                  >
+                  <div id="priorityBox" class="relative py-6">
                     <button
+                      id="priorityButton"
                       type="button"
-                      class="task-priority w-[70px] h-9 bg-high-bg text-high rounded-lg"
-                      data-priority="high"
+                      class="flex shadow-md bg-surface border border-border px-3 py-1 rounded-lg relative shadow-[0_4px_4px_-0px_rgba(0,0,0,0.15)]"
                     >
-                      بالا
+                      <svg
+                        id="priorityPicture"
+                        class="w-[20px] h-[20px] text-neutral-6 transition-transform -rotate-90"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M13.9336 2.81334V10.44C13.9336 10.8933 13.6203 11.46 13.2336 11.7L8.78026 14.4867C8.34693 14.7533 7.66693 14.7267 7.26026 14.42L2.66026 10.9667C2.33359 10.72 2.06693 10.1867 2.06693 9.78001V2.81334C2.06693 1.64667 3.34693 0.940036 4.34026 1.55337L7.29359 3.40001C7.68693 3.64667 8.32693 3.64667 8.72026 3.40001L11.6736 1.55337C12.6536 0.940036 13.9336 1.65334 13.9336 2.81334Z"
+                          fill="currentColor"
+                          stroke="currentColor"
+                          stroke-miterlimit="10"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <p id="priorityText" class="text-neutral-6">تگ ها</p>
                     </button>
-                    <span>|</span>
-                    <button
-                      type="button"
-                      class="task-priority w-[70px] h-9 bg-medium-bg text-medium rounded-lg"
-                      data-priority="medium"
+
+                    <div
+                      id="priorityMenu"
+                      class="flex flex-row items-center shadow-md border border-border bg-surface p-2 rounded-2xl absolute top-20 hidden divide-x divide-x-reverse divide-border gap-3"
                     >
-                      متوسط
-                    </button>
-                    <span>|</span>
-                    <button
-                      type="button"
-                      class="task-priority w-[70px] h-9 bg-low-bg text-low rounded-lg"
-                      data-priority="low"
-                    >
-                      پایین
-                    </button>
+                      <button
+                        type="button"
+                        class="task-priority w-[70px] h-9 bg-high-bg text-high rounded-lg"
+                        data-priority="high"
+                      >
+                        بالا
+                      </button>
+                      <span>|</span>
+                      <button
+                        type="button"
+                        class="task-priority w-[70px] h-9 bg-medium-bg text-medium rounded-lg"
+                        data-priority="medium"
+                      >
+                        متوسط
+                      </button>
+                      <span>|</span>
+                      <button
+                        type="button"
+                        class="task-priority w-[70px] h-9 bg-low-bg text-low rounded-lg"
+                        data-priority="low"
+                      >
+                        پایین
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <div class="border-t border-border p-6 flex justify-end gap-2">
+                <div
+                  class="border-t border-border p-6 flex justify-end gap-2 mt-12"
+                >
                   <button
                     id="close-form-btn"
                     type="button"
