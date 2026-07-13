@@ -38,6 +38,7 @@ export function initPriority() {
   priorityMenu.classList.toggle("hidden");
   priorityPicture.classList.toggle("-rotate-90");
 });
+
 }
 
 export function setPriorityValue(value) {
