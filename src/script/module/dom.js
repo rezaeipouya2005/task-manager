@@ -25,3 +25,4 @@ export const formOriginalNextSibling = form.nextSibling;
 export const priorityLabel = document.querySelector("#priorityText");
 export const dateDesktop = document.querySelector("#date-desktop");
 export const dateMobile = document.querySelector("#date-mobile");
+export const priorityClearBtn = document.querySelector("#priorityClearBtn");
