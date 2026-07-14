@@ -7,6 +7,8 @@ import {
   priorityButton,
   priorityButtons,
   priorityLabel,
+  priorityPicture,
+  priorityClearBtn,
   submitBtn,
   formOriginalParent,
   formOriginalNextSibling,
@@ -14,6 +16,9 @@ import {
 import { tasks, editingId, setEditingId } from "./state.js";
 import { setPriorityValue, priorityText } from "./priority.js";
 import { clearFormFields } from "./create.js";
+
+const priorityTextColorMap = { high: "text-high", medium: "text-medium", low: "text-low" };
+const priorityBgColorMap = { high: "bg-high-bg", medium: "bg-medium-bg", low: "bg-low-bg" };
 
 function handleEditClick(e) {
   const editBtn = e.target.closest(".edit-btn");
@@ -40,16 +45,13 @@ function handleEditClick(e) {
   description.value = task.description;
 
   setPriorityValue(task.priority);
-  const priorityTextColorMap = { high: "text-high", medium: "text-medium", low: "text-low" };
-priorityLabel.textContent = priorityText[task.priority];
-priorityLabel.className = `${priorityTextColorMap[task.priority]} text-sm font-semibold leading-none text-right whitespace-nowrap`;
-priorityPicture.classList.add("hidden");
-  const matchingBtn = Array.from(priorityButtons).find(
-    (btn) => btn.dataset.priority === task.priority
-  );
-  if (matchingBtn) {
-    priorityButton.className = matchingBtn.className;
-  }
+
+  priorityLabel.textContent = priorityText[task.priority];
+  priorityLabel.className = `${priorityTextColorMap[task.priority]} text-sm font-semibold leading-none text-right whitespace-nowrap`;
+  priorityButton.className = "flex items-center justify-center gap-1.5 w-[73px] h-[30px] px-2 py-1 rounded relative";
+  priorityButton.classList.add(priorityBgColorMap[task.priority]);
+  priorityPicture.classList.add("hidden");
+  priorityClearBtn.classList.remove("hidden");
 
   setEditingId(id);
 

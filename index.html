@@ -67,7 +67,9 @@
           />
           <div class="text-right">
             <h2 class="font-bold text-base text-text-primary">سلام، رویا</h2>
-            <p id="date-desktop" class="text-xs text-text-secondary mt-1">سه‌شنبه، ۵ بهمن ۱۴۰۲</p>
+            <p id="date-desktop" class="text-xs text-text-secondary mt-1">
+              سه‌شنبه، ۵ بهمن ۱۴۰۲
+            </p>
           </div>
         </div>
 
@@ -618,7 +620,7 @@
                   <textarea
                     id="task-description"
                     placeholder="توضیحات"
-                    class="text-neutral-6 resize-none outline-none focus:outline-none focus:border-0 focus:ring-0 border-none bg-transparent h-8"
+                    class="text-neutral-6 resize-none outline-none focus:outline-none focus:border-0 focus:ring-0 border-none bg-transparent h-20 w-full overflow-y-auto"
                   ></textarea>
 
                   <div id="priorityBox" class="relative py-6">
@@ -645,6 +647,25 @@
                           stroke-linejoin="round"
                         />
                       </svg>
+                      <span
+                        id="priorityClearBtn"
+                        class="hidden shrink-0 w-[6.67px] h-[6.67px]"
+                      >
+                        <svg
+                          class="w-full h-full text-text-primary"
+                          viewBox="0 0 13 13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.75 0.75L6.25 6.25M6.25 6.25L11.75 11.75M6.25 6.25L11.75 0.75M6.25 6.25L0.75 11.75"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
                       <p
                         id="priorityText"
                         class="text-priority-btn-border text-sm font-semibold leading-none text-right whitespace-nowrap"
@@ -654,7 +675,7 @@
                     </button>
                     <div
                       id="priorityMenu"
-                      class="flex flex-row items-center justify-center shadow-md border border-border bg-surface p-2.5 rounded-lg absolute hidden gap-3 w-[214px] h-[43px] mt-6"
+                      class="flex flex-row items-center justify-center shadow-md border border-priority-divider bg-surface p-2.5 rounded-lg absolute hidden gap-3 w-[214px] h-[43px] mt-6"
                     >
                       <button
                         type="button"
@@ -663,7 +684,7 @@
                       >
                         پایین
                       </button>
-                      <div class="w-px h-6 bg-neutral-5 shrink-0"></div>
+                      <div class="w-px h-6 bg-priority-divider shrink-0"></div>
                       <button
                         type="button"
                         class="task-priority w-[54px] h-[23px] py-0.5 bg-medium-bg text-medium rounded flex items-center justify-center text-[10px] shrink-0"
@@ -671,7 +692,7 @@
                       >
                         متوسط
                       </button>
-                      <div class="w-px h-6 bg-neutral-5 shrink-0"></div>
+                      <div class="w-px h-6 bg-priority-divider shrink-0"></div>
                       <button
                         type="button"
                         class="task-priority w-[31px] h-[23px] py-0.5 bg-high-bg text-high rounded flex items-center justify-center text-[10px] shrink-0"

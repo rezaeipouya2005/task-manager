@@ -43,6 +43,7 @@
     --border: #e9e9e9;
     --border-dashed: #cccccc;
     --priority-btn-border: #afaeb2;
+    --priority-divider: #ebedef;
 
     /* Neutral */
     --neutral-1: #ffffff;
@@ -98,6 +99,7 @@
     --border: #323233;
     --border-dashed: #4b5563;
     --priority-btn-border: #83878f;
+    --priority-divider: #293242;
 
     /* Neutral */
     --neutral-1: #000000;
@@ -158,6 +160,7 @@
   --color-border: var(--border);
   --color-border-dashed: var(--border-dashed);
   --color-priority-btn-border: var(--priority-btn-border);
+  --color-priority-divider: var(--priority-divider);
 
   --color-neutral-1: var(--neutral-1);
   --color-neutral-2: var(--neutral-2);
@@ -270,6 +273,13 @@
     height: 16px;
     color: inherit;
   }
+  #task-title:-webkit-autofill,
+#task-title:-webkit-autofill:hover,
+#task-title:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px var(--background) inset;
+  -webkit-text-fill-color: var(--text-secondary);
+  transition: background-color 5000s ease-in-out 0s;
+}
 }
 
 @font-face {
