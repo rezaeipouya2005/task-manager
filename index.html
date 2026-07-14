@@ -67,7 +67,7 @@
           />
           <div class="text-right">
             <h2 class="font-bold text-base text-text-primary">سلام، رویا</h2>
-            <p class="text-xs text-text-secondary mt-1">سه‌شنبه، ۵ بهمن ۱۴۰۲</p>
+            <p id="date-desktop" class="text-xs text-text-secondary mt-1">سه‌شنبه، ۵ بهمن ۱۴۰۲</p>
           </div>
         </div>
 
@@ -569,7 +569,7 @@
             />
             <div class="text-right">
               <h2 class="font-bold text-2xl text-text-primary">سلام، رویا</h2>
-              <p class="text-sm text-text-secondary mt-1">
+              <p id="date-mobile" class="text-sm text-text-secondary mt-1">
                 امروز، سه‌شنبه ۵ بهمن ۱۴۰۲
               </p>
             </div>
@@ -605,7 +605,7 @@
           <form id="task-form" class="hidden w-full">
             <div class="w-full max-w-[744px] mx-auto pt-5">
               <div
-                class="w-full max-w-[744px] md:min-h-[310px] h-auto mt-4 bg-background shadow-md border border-border rounded-3 gap-2"
+                class="w-full max-w-[744px] md:min-h-[310px] h-auto mt-4 bg-background shadow-md border border-border rounded-xl gap-2"
               >
                 <div class="flex flex-col items-start p-6 gap-2">
                   <input
@@ -625,11 +625,11 @@
                     <button
                       id="priorityButton"
                       type="button"
-                      class="flex shadow-md bg-surface border border-border px-3 py-1 rounded-lg relative shadow-[0_4px_4px_-0px_rgba(0,0,0,0.15)]"
+                      class="flex items-center justify-center gap-2 w-[74px] h-[30px] px-2 py-1 rounded border border-priority-btn-border bg-background relative shadow-[0_4px_4px_-0px_rgba(0,0,0,0.15)]"
                     >
                       <svg
                         id="priorityPicture"
-                        class="w-[20px] h-[20px] text-neutral-6 transition-transform -rotate-90"
+                        class="w-5 h-5 text-priority-btn-border transition-transform -rotate-90 shrink-0"
                         width="16"
                         height="16"
                         viewBox="0 0 16 16"
@@ -645,35 +645,39 @@
                           stroke-linejoin="round"
                         />
                       </svg>
-                      <p id="priorityText" class="text-neutral-6">تگ ها</p>
+                      <p
+                        id="priorityText"
+                        class="text-priority-btn-border text-sm font-semibold leading-none text-right whitespace-nowrap"
+                      >
+                        تگ ها
+                      </p>
                     </button>
-
                     <div
                       id="priorityMenu"
-                      class="flex flex-row items-center shadow-md border border-border bg-surface p-2 rounded-2xl absolute top-20 hidden divide-x divide-x-reverse divide-border gap-3"
+                      class="flex flex-row items-center justify-center shadow-md border border-border bg-surface p-2.5 rounded-lg absolute hidden gap-3 w-[214px] h-[43px] mt-6"
                     >
                       <button
                         type="button"
-                        class="task-priority w-[70px] h-9 bg-high-bg text-high rounded-lg"
-                        data-priority="high"
+                        class="task-priority w-[43px] h-[23px] py-0.5 bg-low-bg text-low rounded flex items-center justify-center text-[10px] shrink-0"
+                        data-priority="low"
                       >
-                        بالا
+                        پایین
                       </button>
-                      <span>|</span>
+                      <div class="w-px h-6 bg-neutral-5 shrink-0"></div>
                       <button
                         type="button"
-                        class="task-priority w-[70px] h-9 bg-medium-bg text-medium rounded-lg"
+                        class="task-priority w-[54px] h-[23px] py-0.5 bg-medium-bg text-medium rounded flex items-center justify-center text-[10px] shrink-0"
                         data-priority="medium"
                       >
                         متوسط
                       </button>
-                      <span>|</span>
+                      <div class="w-px h-6 bg-neutral-5 shrink-0"></div>
                       <button
                         type="button"
-                        class="task-priority w-[70px] h-9 bg-low-bg text-low rounded-lg"
-                        data-priority="low"
+                        class="task-priority w-[31px] h-[23px] py-0.5 bg-high-bg text-high rounded flex items-center justify-center text-[10px] shrink-0"
+                        data-priority="high"
                       >
-                        پایین
+                        بالا
                       </button>
                     </div>
                   </div>
@@ -704,6 +708,7 @@
                     </svg>
                   </button>
                   <button
+                    id="task-submit-btn"
                     class="text-on-primary bg-add-task-bg rounded-md px-4 py-2"
                   >
                     <p class="text-sm font-semibold text-nav-text">

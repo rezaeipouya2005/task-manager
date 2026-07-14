@@ -10,6 +10,7 @@ import { initTheme } from "./module/theme.js";
 import { initSidebar } from "./module/sidebar.js";
 import { initDelete } from "./module/delete.js";
 import { initEdit } from "./module/edit.js";
+import { initDate } from "./module/date.js";
 
 renderTasks();
 completedTasks();
@@ -22,3 +23,4 @@ initTheme();
 initSidebar();
 initDelete();
 initEdit();
+initDate();

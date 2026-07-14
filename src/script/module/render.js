@@ -38,18 +38,18 @@ export function renderTasks() {
       }
 
       li.className =
-        "w-full max-w-[744px] min-h-[105px] h-auto bg-surface border-2 border-border rounded-xl flex items-center relative justify-between  mt-2.5";
+  "w-full max-w-[744px] min-h-[105px] h-auto bg-surface border-2 border-task-card-border rounded-xl flex items-center relative justify-between  mt-2.5";
 
       li.innerHTML = `
         <img src="${priorityImage}" alt="" class="absolute right-0 top-0 h-full"/>
 
         <div class="flex items-start  flex-1 pr-2 relative">
 
-          <input
-            type="checkbox"
-            class="w-[22px] h-[22px] mt-1 shrink-0 appearance-none rounded border border-white border-2 m-4"
-            ${task.completed ? "checked" : ""}
-          />
+         <input
+  type="checkbox"
+  class="w-5 h-5 mt-1 shrink-0 appearance-none rounded-[5px] border border-priority-btn-border m-4"
+  ${task.completed ? "checked" : ""}
+/>
 
           <div class="flex-1 px-3 min-w-0">
 
@@ -60,7 +60,7 @@ export function renderTasks() {
 </p>
 
               <p
-                class="w-[54px] h-6 flex items-center justify-center rounded-lg text-text-secondary ${priorityClass}">
+                class="w-[54px] h-6 flex items-center justify-center rounded-lg  ${priorityClass}">
                 ${priorityText[task.priority]}
               </p>
 
@@ -81,11 +81,13 @@ export function renderTasks() {
 
         <div class="flex items-center absolute top-4 left-1 z-50 ">
 
-          <button class="menu-btn ">
-            <img
-              src="./src/asstes/icon/Frame 33317.svg"
-              class="px-3 md:px-6 "
-            />
+          <button class="menu-btn px-3 md:px-6">
+  <svg width="4" height="18" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-nav-text">
+    <circle cx="2" cy="2" r="2" fill="currentColor"/>
+    <circle cx="2" cy="9" r="2" fill="currentColor"/>
+    <circle cx="2" cy="16" r="2" fill="currentColor"/>
+  </svg>
+</button>
           </button>
 
           <div class="menu hidden absolute left-5 top-5 bg-surface flex flex-row-reverseborder border border-border rounded-lg shadow-md p-2 z-50">
@@ -138,14 +140,30 @@ export function completedTasks() {
       completedList.innerHTML += `
    <div
       data-id="${task.id}"
-      class="w-full max-w-[744px] md:h-[74px] h-auto bg-surface border-2 border-border rounded-xl flex items-center 
-      justify-between relative gap-4  ">
+      class="w-full max-w-[744px] md:h-[74px] h-auto bg-surface border-2 border-task-card-border rounded-xl flex items-center 
+justify-between relative gap-4  ">
           
        
           <img src="${priorityImage}" alt="" class="" />
 
             <div class="flex items-center gap-3 flex-1 min-w-0">
-          <input type="checkbox" checked  class=" right-[11px] w-[22px] h-[22px] "  />
+          <div class="relative w-5 h-5 shrink-0">
+  <input
+    type="checkbox"
+    checked
+    class="appearance-none w-5 h-5 rounded-[5px]"
+    style="background-color: #007BFF;"
+  />
+  <svg class="absolute inset-0 w-5 h-5 pointer-events-none" viewBox="0 0 20 20" fill="none">
+    <path
+      d="M5 10L8.5 13.5L15 6.5"
+      stroke="var(--surface)"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</div>
           <p class=" right-[58px] font-semibold text-base md:text-lg line-through text-text-primary">
     ${task.title}
 </p>

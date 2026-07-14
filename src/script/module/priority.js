@@ -4,14 +4,18 @@ import {
   priorityMenu,
   priorityPicture,
   priorityButton,
+  priorityLabel,
 } from "./dom.js";
 
-const defaultPriorityText = priorityButton.textContent;
-const defaultPriorityClass = priorityButton.className;
+const defaultPriorityText = priorityLabel.textContent;
+const defaultLabelClass = priorityLabel.className;
+const defaultButtonClass = priorityButton.className;
 
 export function resetPriorityButton() {
-  priorityButton.textContent = defaultPriorityText;
-  priorityButton.className = defaultPriorityClass;
+  priorityLabel.textContent = defaultPriorityText;
+  priorityLabel.className = defaultLabelClass;
+  priorityButton.className = defaultButtonClass;
+  priorityPicture.classList.remove("hidden");
 }
 
 export let priorityValue = "";
@@ -22,14 +26,22 @@ export const priorityText = {
   low: "پایین",
 };
 
+const priorityTextColor = {
+  high: "text-high",
+  medium: "text-medium",
+  low: "text-low",
+};
+
 export function initPriority() {
   priorityButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       event.stopPropagation();
       priorityValue = button.dataset.priority;
 
-      priorityButton.textContent = button.textContent;
+      priorityLabel.textContent = button.textContent;
+      priorityLabel.className = `${priorityTextColor[priorityValue]} text-sm font-semibold leading-none text-right whitespace-nowrap`;
       priorityButton.className = button.className;
+      priorityPicture.classList.add("hidden");
       priorityMenu.classList.add("hidden");
     });
   });
@@ -38,9 +50,6 @@ export function initPriority() {
     priorityMenu.classList.toggle("hidden");
     priorityPicture.classList.toggle("-rotate-90");
     e.stopPropagation();
-  });
-  document.addEventListener("click", () => {
-    priorityMenu.classList.add("hidden");
   });
 }
 

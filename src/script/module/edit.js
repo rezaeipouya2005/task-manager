@@ -1,6 +1,19 @@
-import { taskList, completedList, form, title, description, priorityButton, priorityButtons } from "./dom.js";
-import { tasks, setEditingId } from "./state.js";
+import {
+  taskList,
+  completedList,
+  form,
+  title,
+  description,
+  priorityButton,
+  priorityButtons,
+  priorityLabel,
+  submitBtn,
+  formOriginalParent,
+  formOriginalNextSibling,
+} from "./dom.js";
+import { tasks, editingId, setEditingId } from "./state.js";
 import { setPriorityValue, priorityText } from "./priority.js";
+import { clearFormFields } from "./create.js";
 
 function handleEditClick(e) {
   const editBtn = e.target.closest(".edit-btn");
@@ -9,6 +22,17 @@ function handleEditClick(e) {
   const li = editBtn.closest("li") || editBtn.closest("div[data-id]");
   const id = Number(li.dataset.id);
 
+  const isFormOpen = !form.classList.contains("hidden");
+  const isSameTask = editingId === id;
+
+  if (isFormOpen && isSameTask) {
+    form.classList.add("hidden");
+    formOriginalParent.insertBefore(form, formOriginalNextSibling);
+    setEditingId(null);
+    clearFormFields();
+    return;
+  }
+
   const task = tasks.find((t) => t.id === id);
   if (!task) return;
 
@@ -16,8 +40,10 @@ function handleEditClick(e) {
   description.value = task.description;
 
   setPriorityValue(task.priority);
-  priorityButton.textContent = priorityText[task.priority];
-
+  const priorityTextColorMap = { high: "text-high", medium: "text-medium", low: "text-low" };
+priorityLabel.textContent = priorityText[task.priority];
+priorityLabel.className = `${priorityTextColorMap[task.priority]} text-sm font-semibold leading-none text-right whitespace-nowrap`;
+priorityPicture.classList.add("hidden");
   const matchingBtn = Array.from(priorityButtons).find(
     (btn) => btn.dataset.priority === task.priority
   );
@@ -26,6 +52,9 @@ function handleEditClick(e) {
   }
 
   setEditingId(id);
+
+  li.insertAdjacentElement("afterend", form);
+  submitBtn.textContent = "ویرایش تسک";
 
   form.classList.remove("hidden");
 }

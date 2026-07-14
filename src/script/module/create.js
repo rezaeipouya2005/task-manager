@@ -1,12 +1,36 @@
 console.log("CREATE FILE RUNNING");
 
-import { form, title, description, taskBtn, closeFormBtn } from "./dom.js";
+import { form, title, description, taskBtn, closeFormBtn, submitBtn, formOriginalParent, formOriginalNextSibling } from "./dom.js";
 import { tasks, setTasks, editingId, setEditingId } from "./state.js";
 import { saveTasks } from "./storage.js";
 import { renderTasks, completedTasks } from "./render.js";
 import { priorityValue, setPriorityValue, resetPriorityButton } from "./priority.js";
 
+function resetFormPosition() {
+  formOriginalParent.insertBefore(form, formOriginalNextSibling);
+  submitBtn.textContent = "اضافه کردن تسک";
+}
+
+export function clearFormFields() {
+  title.value = "";
+  description.value = "";
+  setPriorityValue("");
+  resetPriorityButton();
+}
+
 export function taskForm() {
+  if (editingId !== null) {
+    setEditingId(null);
+    resetFormPosition();
+    clearFormFields();
+    form.classList.remove("hidden");
+    return;
+  }
+
+  const isHidden = form.classList.contains("hidden");
+  if (isHidden) {
+    resetFormPosition();
+  }
   form.classList.toggle("hidden");
 }
 
@@ -39,11 +63,8 @@ export function createTask(e) {
   renderTasks();
   completedTasks();
   form.classList.add("hidden");
-
-  title.value = "";
-  description.value = "";
-  setPriorityValue("");
-  resetPriorityButton();
+  resetFormPosition();
+  clearFormFields();
 }
 
 export function initCreate() {
@@ -52,5 +73,8 @@ export function initCreate() {
   taskBtn.addEventListener("click", taskForm);
   closeFormBtn.addEventListener("click", () => {
     form.classList.add("hidden");
+    resetFormPosition();
+    setEditingId(null);
+    clearFormFields();
   });
 }
