@@ -61,6 +61,6 @@ Open `index.html` in a browser, or use a local static server such as Live Server
 
 ## Scripts
 
-| Script | Description |
-| --- | --- |
+| Script          | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
 | `npm run watch` | Watches Tailwind input CSS and rebuilds `src/css/output.css` |
